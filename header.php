@@ -13,6 +13,17 @@ if($user_login->is_logged_in() !="")
     $stmt->execute(array(":user_id"=>$userId));
     $currentUser = $stmt->fetch(PDO::FETCH_OBJ);  
 }
+
+if(isset($_POST['btn-login']))
+{
+	$login = trim($_POST['login']);
+	$upass = trim($_POST['upass']);
+	
+	if($user_login->login($login,$upass))
+	{
+		$user_login->redirect('user/index.php');
+	}
+}
 ?>
 
 <!DOCTYPE html>

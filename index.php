@@ -13,26 +13,6 @@ if(isset($_POST['btn-login']))
 	}
 }
 
-if(isset($_POST['contact_btn']))
-{
-	$name = trim($_POST['name']);
-	$email = trim($_POST['email']);
-	$subject = "WCarPs Contact message";
-	$message = trim($_POST['message']);
-
-	$headers = "From: info@wcarps.com\r\n";
-    $headers .= "Reply-To: info@wcarps.com\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-
-    mail($email,$subject,$message,$headers);	
-	
-	<!-- if($user_login->send_mail($email,$message,$subject))
-	{
-		$user_login->redirect('user/index.php');
-	} -->
-}
 
 ?>
 	
@@ -49,11 +29,17 @@ if(isset($_POST['contact_btn']))
 					<img class="logo" src="./images/logo.png" alt="WCarPs" height="400" width="460" />
 					<h1 class="slogan"><b>Wrong Car Parking Solution </b><br><span class="type"></span></h1>
 					<!--<h2 class="slogan"><b><i>Wrong Car Parking Solution<br>Beware We Care.....</b></i><br><span class="type"></span></h1></h2>-->
+					<p>
+						<a class="download-btn-alt ios-btn" data-toggle="modal" data-target="#modalLogin">
+							<i class="icon icon-user"></i>Login for <b>WCarPs</b>
+						</a>
+					</p>
 					<a class="download-btn-alt android-btn" href="#">
 						<i class="icon soc-icon-android"></i>Download for <b>Android</b>
 					<a class="download-btn-alt ios-btn"data-toggle="modal" data-target="#modalIphone">
 						<i class="icon soc-icon-apple"></i>Download for <b>Apple iOS</b>
 					</a>
+					
 				</div>
 			</div>
 		</div>
