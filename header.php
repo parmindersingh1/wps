@@ -73,24 +73,24 @@ if(isset($_POST['btn-login']))
 	<!-- NAVIGATION BEGIN -->
 	<nav class="navbar navbar-fixed-top navbar-slide">
 			<div class="container_fluid"> 
-				<a class="navbar-brand goto" href="index.php#wrap"> <img src="./images/logo_nav.png" alt="WCarPs" height="40" width="45" /> </a>
+				<a class="navbar-brand goto" href="index.php"> <img src="./images/logo_nav.png" alt="WCarPs" height="40" width="45" /> </a>
 				<a class="contact-btn icon-user" data-toggle="modal" data-target="#modalLogin"></a>
 				<a class="contact-btn icon-envelope" data-toggle="modal" data-target="#modalContact"></a>
 				<button class="navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<div class="collapse navbar-collapse navMenuCollapse">
 					<ul class="nav">
-					    <li><a href="/index.php#wrap">Home</a> </li>
+					    <li><a href="index.php">Home</a> </li>
 						<li><a href="#features">Features</a> </li>
 						<li><a href="#benefits1">Benefits</a></li>
 						<li><a href="#screenshots">Screenshots</a></li>
 					<li><a href="#pricing-table">Price</a></li>
 						<li><a href="#social">Stay Tuned</a></li>
-						<li><a href="/aboutus.php">About Us</a></li>
-						<li><a href="/contactus.php">Contact Us</a></li>
+						<li><a href="aboutus.php">About Us</a></li>
+						<li><a href="contactus.php">Contact Us</a></li>
 						<li><a href="http://brand.wcarps.com">Brand Center</a></li>
-						<li><a href="/termsofservice.php">Terms Of Service</a></li>
-						<li><a href="/privacypolicy.php">Privacy Policy</a></li>
-						<li><a href="/faq.php">FAQ</a></li>
+						<li><a href="termsofservice.php">Terms Of Service</a></li>
+						<li><a href="privacypolicy.php">Privacy Policy</a></li>
+						<li><a href="faq.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>
