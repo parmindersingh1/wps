@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<!-- Html Page Specific -->
+<meta charset="utf-8">
+<title>WCarPs</title>
+<meta name="description" content="WCarPs">
+<meta name="author" content="WCarPs | WCarPs.com">
+
+<!-- Mobile Specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="scripts/html5shiv.js"></script>
+<![endif]-->
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/animate.css"/>
+<link rel="stylesheet" href="css/simple-line-icons.css"/>
+<link rel="stylesheet" href="css/icomoon-soc-icons.css"/>
+<link rel="stylesheet" href="css/magnific-popup.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+<!-- Favicons -->
+<link rel="icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+	<div class="battery inner">
+		<div class="load-line"></div>
+	</div>
+</div>
+
+<div id="wrap">  
+	
+	<!-- NAVIGATION BEGIN -->
+	<nav class="navbar navbar-fixed-top navbar-slide">
+			<div class="container_fluid"> 
+				<a class="navbar-brand goto" href="index.html#wrap"> <img src="./images/logo_nav.png" alt="WCarPs" height="42" width="60" /> </a>
+				<a class="contact-btn icon-user" data-toggle="modal" data-target="#modalLogin"></a>
+				<a class="contact-btn icon-envelope" data-toggle="modal" data-target="#modalContact"></a>
+				<button class="navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<div class="collapse navbar-collapse navMenuCollapse">
+					<ul class="nav">
+					    <li><a href="index.html#wrap">Home</a> </li>
+						<li><a href="aboutus.html">About Us</a></li>
+						<li><a href="contactus.html">Contact Us</a></li>
+						<li><a href="termsofservice.html">Terms Of Service</a></li>
+						<li><a href="privacypolicy.html">Privacy Policy</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+	</nav>
+	<!-- NAVIGAION END -->
+	
+	<!-- INTRO BEGIN -->
+	<header id="blog-intro" class="intro-block bg-color-main" >
+		<div class="container">
+			<h1 class="slogan"><b>Contact Us</b></h1>
+		</div>
+		<div class="block-bg" data-stellar-ratio="0.5"></div>
+	</header>
+	<!-- INTRO END --> 
+	
+	<!-- Contact Us Page BEGIN -->
+	<section id="services" class="section section-padded">
+    <div class="container">
+	<br>
+    <center><h3>If You have any additional queries about Wrong Car Parking Solution, You are encouraged to contact us.</center></h3>
+    <center><h4>You can also send your enquiries via email to :- </center></h4>
+    <br>
+    <u><center><h4>info@WCarPs.com </center></h4>
+    <center><h4>wrongcarparkingsolution@gmail.com </center></h4></u>
+    <br>
+    <center><h4>For Users that may have grievances pertaining to the Services, Wrong Car Parking Solution has appointed a Grievance Officer to deal with Your issues. You may reach him/her on <u>info@WCarPs.com</u></h4></center>
+    <br> 
+    <div class="cut cut-bottom"></div>
+    </section>
+   <!-- Contact Us Page END -->
+ 
+	<!-- DOWNLOAD BEGIN -->
+	<section id="download" class="bg-color-main">
+		<div class="container-fluid wow fadeInDown">
+			<a href="#wrap" class="goto">
+				<h2><i class="icon soc-icon-apple"></i><i class="icon soc-icon-android"></i>Download App</h2>
+			</a>
+		</div>
+		<div class="block-bg" data-stellar-ratio="0.5"></div>
+	</section>
+	<!-- DOWNLOAD END -->
+	
+	
+	<!-- FOOTER BEGIN -->
+	<footer id="footer">
+		<div class="container"> 
+			<a href="index.html#wrap" class="logo goto"> <img src="./images/logo_small.png" alt="WCarPs" height="200" width="220"/> </a>
+			<p class="copyright">&copy; 2016 WCarPs <br>
+			Designed by <a href="http://mcssan.WCarPs.com/" target="_blank">MCSSAN</a></p>
+		</div>
+	</footer>
+	<!-- FOOTER END --> 
+	
+</div>
+
+<!-- MODALS BEGIN--> 
+
+<!-- subscribe modal-->
+<div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 class="modal-title"></h3>
+		</div>
+	</div>
+</div>
+
+<!-- contact modal-->
+<div class="modal fade" id="modalContact" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 class="modal-title">Contact</h3>
+			<form action="scripts/contact.php" role="form"  id="contact_form">
+				<div class="form-group">
+					<input type="text" class="form-control" id="contact_name" placeholder="Full name" name="name">
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" id="contact_email" placeholder="Email Address" name="email">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" rows="3" placeholder="Your message or question" id="contact_message" name="message"></textarea>
+				</div>
+				<button type="submit" id="contact_submit" data-loading-text="&bull;&bull;&bull;"> <i class="icon icon-paper-plane"></i></button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- MODALS END--> 
+
+<!-- Login/Signin Code Begins-->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<h3 class="white">Sign In</h3>
+				<hr>
+				<form action="" class="popup-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+					<div class="form-group">
+					<input type="text" class="form-control form-white" name="login" placeholder="Email Or Phone">
+					</div>
+					<hr>
+					<div class="form-group">
+					<input type="password" class="form-control form-white" name="upass" placeholder="Password">
+					</div>
+					<hr>
+					<button type="submit" id="contact_submit" class="btn btn-submit" name="btn-login"><i class="icon icon-paper-plane"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!-- Login/Signin Code End-->
+
+<!-- JavaScript --> 
+<script src="scripts/jquery-1.8.2.min.js"></script> 
+<script src="scripts/bootstrap.min.js"></script> 
+<script src="scripts/owl.carousel.min.js"></script> 
+<script src="scripts/jquery.validate.min.js"></script> 
+<script src="scripts/wow.min.js"></script> 
+<script src="scripts/smoothscroll.js"></script> 
+<script src="scripts/jquery.smooth-scroll.min.js"></script> 
+<script src="scripts/jquery.superslides.min.js"></script> 
+<script src="scripts/placeholders.jquery.min.js"></script> 
+<script src="scripts/jquery.magnific-popup.min.js"></script> 
+<script src="scripts/jquery.stellar.min.js"></script> 
+<script src="scripts/retina.min.js"></script>
+<script src="scripts/video.js"></script>
+<script src="scripts/bigvideo.js"></script>
+<script src="scripts/custom.js"></script> 
+
+<!--[if lte IE 9]>
+	<script src="scripts/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>
