@@ -29,11 +29,11 @@ if(isset($_POST['btn-login']))
 					<img class="logo" src="./images/logo.png" alt="WCarPs" height="400" width="460" />
 					<h1 class="slogan"><b>Wrong Car Parking Solution </b><br><span class="type"></span></h1>
 					<!--<h2 class="slogan"><b><i>Wrong Car Parking Solution<br>Beware We Care.....</b></i><br><span class="type"></span></h1></h2>-->
-					<p>
+					<!-- <p> -->
 						<a class="download-btn-alt ios-btn" data-toggle="modal" data-target="#modalLogin">
 							<i class="icon icon-user"></i>Login for <b>WCarPs</b>
 						</a>
-					</p>
+					<br>
 					<a class="download-btn-alt android-btn" href="#">
 						<i class="icon soc-icon-android"></i>Download for <b>Android</b>
 					<a class="download-btn-alt ios-btn"data-toggle="modal" data-target="#modalIphone">
