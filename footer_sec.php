@@ -3,14 +3,7 @@
 		<div class="container"> 
 			<a href="index.html#wrap" class="logo goto"> <img src="./images/logo_small.png" alt="WCarPs" height="200" width="220"/> </a>
 			<p class="copyright">&copy; 2016 WCarPs <br>
-			Designed by <a href="http://mcssan.WCarPs.com/" target="_blank">MCSSAN</a></p> 
-			<br>
-			<center> <b><a href="faq.php"title="FAQ" target="_blank">FAQ</a><br>
-			    <a href="aboutus.php"title="About Us" target="_blank">About Us</a><br>
-				<a href="contactus.php" title="Contact Us" target="_blank">Contact Us</a><br>
-				<a href="http://brand.wcarps.com/"title="Brand Center" target="_blank">Brand Center</a><br>
-				<a href="privacypolicy.php" title="Privacy Policy" target="_blank">Privacy Policy</a><br>
-				<a href="termsofservice.php" title="Terms Of Service" target="_blank">Terms Of Service</a><br></center></b>
+			Designed by <a href="http://mcssan.WCarPs.com/" target="_blank">MCSSAN</a></p>
 		</div>
 	</footer>
 	<!-- FOOTER END --> 
