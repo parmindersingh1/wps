@@ -13,6 +13,27 @@ if(isset($_POST['btn-login']))
 	}
 }
 
+if(isset($_POST['contact_btn']))
+{
+	$name = trim($_POST['name']);
+	$email = trim($_POST['email']);
+	$subject = "WCarPs Contact message";
+	$message = trim($_POST['message']);
+
+	$headers = "From: info@wcarps.com\r\n";
+    $headers .= "Reply-To: info@wcarps.com\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+    mail($email,$subject,$message,$headers);	
+	
+	<!-- if($user_login->send_mail($email,$message,$subject))
+	{
+		$user_login->redirect('user/index.php');
+	} -->
+}
+
 ?>
 	
  	
@@ -492,7 +513,7 @@ design make it actual for a long time.</p>
 						<div class="form-group">
 							<textarea class="form-control" rows="3" placeholder="Your message or question" id="contact_message" name="message"></textarea>
 						</div>
-						<button type="submit" id="contact_submit" data-loading-text="&bull;&bull;&bull;"> <i class="icon icon-paper-plane"></i></button>
+						<button type="submit" id="contact_submit" name="contact_btn" data-loading-text="&bull;&bull;&bull;"> <i class="icon icon-paper-plane"></i></button>
 					</form>
 		</div>
 	</div>
