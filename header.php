@@ -79,18 +79,18 @@ if(isset($_POST['btn-login']))
 				<button class="navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<div class="collapse navbar-collapse navMenuCollapse">
 					<ul class="nav">
-					    <li><a href="index.php#wrap">Home</a> </li>
+					    <li><a href="/index.php#wrap">Home</a> </li>
 						<li><a href="#features">Features</a> </li>
 						<li><a href="#benefits1">Benefits</a></li>
 						<li><a href="#screenshots">Screenshots</a></li>
 					<li><a href="#pricing-table">Price</a></li>
 						<li><a href="#social">Stay Tuned</a></li>
-						<li><a href="aboutus.php">About Us</a></li>
-						<li><a href="contactus.php">Contact Us</a></li>
-						<li><a href="brand.wcarps.com">Brand Center</a></li>
-						<li><a href="termsofservice.php">Terms Of Service</a></li>
-						<li><a href="privacypolicy.php">Privacy Policy</a></li>
-						<li><a href="faq.php">FAQ</a></li>
+						<li><a href="/aboutus.php">About Us</a></li>
+						<li><a href="/contactus.php">Contact Us</a></li>
+						<li><a href="http://brand.wcarps.com">Brand Center</a></li>
+						<li><a href="/termsofservice.php">Terms Of Service</a></li>
+						<li><a href="/privacypolicy.php">Privacy Policy</a></li>
+						<li><a href="/faq.php">FAQ</a></li>
 					</ul>
 				</div>
 			</div>
