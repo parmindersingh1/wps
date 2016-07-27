@@ -26,7 +26,7 @@ if(isset($_POST['btn-login']))
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<img class="logo" src="./images/logo.png" alt="WCarPs" height="400" width="460" />
+					<img class="logo" src="./images/logo.png" alt="WCarPs"  />
 					<h1 class="slogan"><b>Wrong Car Parking Solution </b><br><span class="type"></span></h1>
 					<!--<h2 class="slogan"><b><i>Wrong Car Parking Solution<br>Beware We Care.....</b></i><br><span class="type"></span></h1></h2>-->
 					<!-- <p> -->

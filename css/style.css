@@ -2515,3 +2515,7 @@ footer { padding: 80px 0; }
     line-height: 25px;
     width: 100%;
 }
+
+.intro-block .logo {
+	width: 50%;
+}
