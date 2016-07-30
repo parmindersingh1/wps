@@ -26,7 +26,7 @@ if($_POST['phone']) {
 			// $reg_user->send_mail($email,$message,$subject);	
 						
 			$response["success"] = true;
-			$response["message"] = "We've sent an message to $phone. Please Check inbox.";
+			$response["message"] = "We've sent an message to $phone. Please Check Message.";
 						//logToFile('mylog.log',$response);
 			echo json_encode($response);
 		} else {
