@@ -1,18 +1,19 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+    if(!empty($_POST['contactname']) && !empty($_POST['contactemail']) && !empty($_POST['contactmessage'])) {
+
+	   
 		$to = "info@wcarps.com"; // Your e-mail address here.
-		$body = "\nName: {$_POST['name']}\nEmail: {$_POST['email']}\n\n\n{$_POST['message']}\n\n";
+		$body = "\nName: {$_POST['contactname']}\nEmail: {$_POST['contactemail']}\n\n\n{$_POST['contactmessage']}\n\n";
 		$subject = "Message from wcarps.com";
 
-		$headers = "From: ".$_POST['email']."\r\n";
+		$headers = "From: ".$_POST['contactemail']."\r\n";
 	    $headers .= "Reply-To: info@wcarps.com\r\n";
 	    $headers .= "MIME-Version: 1.0\r\n";
 	    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 
-	    $res = mail($to,$subject,$body,$headers);		
-	    file_put_contents( 'debug' . time() . '.log', var_export( $res, true));
+	    mail($to,$subject,$body,$headers);		
 		
     }
 }
