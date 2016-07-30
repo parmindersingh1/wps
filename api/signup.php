@@ -104,13 +104,13 @@ if(isset($_POST['user'])) {
 
 					// }
 					
-					$message = "Hello, Your Wcarps Verification Code is $code.";		
-					$subject = "Confirm Registration";
+					// $message = "Hello, Your Wcarps Verification Code is $code.";		
+					// $subject = "Confirm Registration";
 								
-					$reg_user->send_mail($email,$message,$subject);	
+					$reg_user->send_sms($phone,$fname,$code);	
 					
 					$response["success"] = true;
-					$response["message"] = "We've sent an email to $email. Please Check inbox or spam.";
+					$response["message"] = "We've sent a message to $phone. Please Check inbox.";
 					echo json_encode($response);
 				}
 				else
