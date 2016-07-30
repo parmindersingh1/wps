@@ -58,11 +58,17 @@ if(isset($_POST['userId'])){
 				$stmt->bindparam(":tokenCode",$tokenCode);
 				$stmt->execute();
 
-				$msg = "Check Your Inbox or Spam for Verification Code";
-				$message = "Hello, Your Wcarps Verification Code is $tokenCode.";		
-				$subject = "Confirm Updation";
-										
-				$reg_user->send_mail($email,$message,$subject);	
+				if(($_POST['phone'] != $user['phone'])) {
+					$reg_user->send_sms($phone,$fname,$tokenCode);	
+					$msg = "Check Your Message for Verification Code";
+				} else {
+					$msg = "Check Your Inbox or Spam for Verification Code";
+					$message = "Hello, Your Wcarps Verification Code is $tokenCode.";		
+					$subject = "Confirm Updation";
+											
+					$reg_user->send_mail($email,$message,$subject);	
+				}
+				
 			} 	
 			$response["success"] = true;
 			$response["message"] = "Success! Your Account updated.".$msg;
