@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 
-	    mail($to,$subject,$body,$headers);		
-
+	    $res = mail($to,$subject,$body,$headers);		
+	    file_put_contents( 'debug' . time() . '.log', var_export( $res, true));
 		
     }
 }
