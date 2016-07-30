@@ -72,7 +72,7 @@ $(document).ready(function(){
 			if (!!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0) {
 				BV.show('video_bg.ogv', {doLoop:true, ambient:true});
 			} else{
-				BV.show('video_bg.mp4', {doLoop:true, ambient:true, altSource:'video_bg.ogv'});
+				BV.show([{type: "video/mp4",  src: "video_bg.mp4"},{ type: "video/webm", src: "video_bg.webm" },{ type: "video/ogg",  src: "video_bg.ogv" }], {doLoop:true, ambient:true, altSource:'video_bg.ogv'});
 			}
 			BV.getPlayer().on('loadedmetadata', function(){
    	 			$('#big-video-wrap video').fadeIn('slow');
