@@ -110,7 +110,7 @@ if(isset($_POST['user'])) {
 					$reg_user->send_sms($phone,$fname,$code);	
 					
 					$response["success"] = true;
-					$response["message"] = "We've sent a message to $phone. Please Check inbox.";
+					$response["message"] = "We've sent a message to $phone. Please Check Message.";
 					echo json_encode($response);
 				}
 				else
