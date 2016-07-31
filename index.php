@@ -277,6 +277,7 @@ design make it actual for a long time.</p>
 							 <li>WCarPs Website Login</li>
 							<li>Vehicle Searching</li>
 							<li>Theft Alert</li>
+							<li>No Ads</li>
 							<li class="not">Live Tracking (GPS Device)</li>
 							
 						</ul>
