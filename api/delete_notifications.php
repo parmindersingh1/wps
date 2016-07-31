@@ -14,7 +14,6 @@ if(isset($_POST['notifications']) && isset($_POST['userId'])) {
   $inQuery = join(', ', $notArray);
   $sql = "DELETE  FROM tbl_users_notifications WHERE notification_id in (".$inQuery.") AND user_id = :user_id";
 
-  file_put_contents( 'debug' . time() . '.log', var_export( $sql, true));
   $stmt = $reg_user->runQuery($sql);
 
       $stmt->bindparam(":user_id",$userID, PDO::PARAM_INT);  
