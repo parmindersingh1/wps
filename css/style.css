@@ -2512,7 +2512,7 @@ footer { padding: 80px 0; }
 .intro-block .logo {
 	width: 35%;
 }
-.intro-block a {
+.intro-block a.download-btn-alt {
 	margin: 10px;
 }
 .intro-block .type {
