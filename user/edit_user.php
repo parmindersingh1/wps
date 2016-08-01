@@ -47,16 +47,17 @@ if(isset($_POST['btn-edit']))
 			$code = $tokenCode;			
 
 
-			if(($phone != $currentUser->phone)) {
-				$user_login->send_sms($phone,$fname,$code);	
-			} else {
-				$msg = "Check Your Inbox or Spam for Verification Code";
-				$message = "Hello, Your Wcarps Verification Code is $tokenCode. OR Go to Link 
-				<a href=".$user_login->apiurl()."verify.php?id=$id&code=$code";	
+			// if(($phone != $currentUser->phone)) {
+			$msg = "Check Your Messages in Phone for Verification Code";
+			$user_login->send_sms($phone,$fname,$code);	
+			// } else {
+			// 	$msg = "Check Your Inbox or Spam for Verification Code";
+			// 	$message = "Hello, Your Wcarps Verification Code is $tokenCode. OR Go to Link 
+			// 	<a href=".$user_login->apiurl()."verify.php?id=$id&code=$code";	
 
-				$subject = "Confirm Updation";
-				$user_login->send_mail($email,$message,$subject);	
-			}
+			// 	$subject = "Confirm Updation";
+			// 	$user_login->send_mail($email,$message,$subject);	
+			// }
 
 
 			$user_login->logout();
