@@ -20,7 +20,7 @@ if(isset($_POST['notifications']) && isset($_POST['userId'])) {
       
       if ($stmt->execute()) {
             $response["success"] = true;
-            $response["message"] = "successfully Delted!";
+            $response["message"] = "Successfully Deleted!";
       } else {
         $response["success"] = false;
         $response["message"] = "Some Problem...";

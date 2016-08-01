@@ -106,6 +106,32 @@ if(isset($_POST['user'])) {
 					
 					// $message = "Hello, Your Wcarps Verification Code is $code.";		
 					// $subject = "Confirm Registration";
+
+					$message = '<html>
+						    <head>
+						        <title>Welcome to WCarPs</title>
+						    </head>
+						    <body>
+						        <h1>Thanks you for joining with us!</h1>
+						        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
+						            <tr>
+						                <th>Name:</th><td>'.$fname.' '.$lname.'</td>
+						            </tr>
+						            <tr style="background-color: #e0e0e0;">
+						                <th>Email:</th><td>'.$email.'</td>
+						            </tr>
+						             <tr style="background-color: #e0e0e0;">
+						                <th>Phone:</th><td>'.$phone.'</td>
+						            </tr>
+						            <tr>
+						                <th>Website:</th><td><a href="http://www.wcaprs.com">www.wcarps.com</a></td>
+						            </tr>
+						        </table>
+						    </body>
+						    </html>';		
+					$subject = "Welcome to WCarPs";
+											
+					$reg_user->send_mail($email,$message,$subject);	
 								
 					$reg_user->send_sms($phone,$fname,$code);	
 					
