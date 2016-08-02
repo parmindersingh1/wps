@@ -22,7 +22,7 @@ if(isset($_POST['login']) && isset($_POST['upass']) )
             {
               $_SESSION['userSession'] = $user['userID'];
               $response["success"] = true;
-              $response["message"] = "Logged in Sucessfully";
+              $response["message"] = "Logged in Successfully";
               unset($user['userName']);
               unset($user['tokenCode']);
               unset($user['userPass']);
