@@ -32,7 +32,13 @@ include('header.php');
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">Vehicles
+					<?php
+					if(!$livetracking) { 
+						?>
 						 <a href="create_vehicle.php" data-original-title="Create Vehicle" data-toggle="tooltip" type="button" class="btn btn-sm btn-info pull-right"><i class="glyphicon glyphicon-plus"></i> Create Vehicle </a>
+					<?php	 
+						}
+					?>
 					</div>
 					<div class="panel-body">	
 
