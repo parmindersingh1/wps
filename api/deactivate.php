@@ -11,7 +11,7 @@ if(isset($_POST['userID'])) {
 	if($user->deactivate($userID))
 	{					
 			$response["success"] = true;
-		    $response["message"] = "Deactivated Sucessfully";
+		    $response["message"] = "Deactivated Sucsessfully";
 		    echo json_encode($response);
 		
 	} else {
