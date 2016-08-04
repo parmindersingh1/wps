@@ -83,7 +83,7 @@ if(isset($_POST['btn-login']))
 						<li><a href="#features">Features</a> </li>
 						<li><a href="#benefits1">Benefits</a></li>
 						<li><a href="#screenshots">Screenshots</a></li>
-					<li><a href="#pricing-table">Price</a></li>
+						<li><a href="#pricing-table">Price</a></li>
 						<li><a href="#social">Stay Tuned</a></li>
 						<li><a href="aboutus.php">About Us</a></li>
 						<li><a href="contactus.php">Contact Us</a></li>
