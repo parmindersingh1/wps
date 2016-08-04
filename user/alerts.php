@@ -9,7 +9,7 @@ $user_vehicle = new Vehicle();
 include('header.php'); 
 
 $userID = $currentUser->userID;
-$stmt = $user_vehicle->runQuery("SELECT lv.id as id,u.userID as user_id, v.name as vehicle_name, v.model_no as vehicle_no, v.chassis_no as chassis_no, lv.address as location, if(lv.is_lost, 'true', 'false')  as is_lost, lv.date_of_lost as date_of_lost, CONCAT(u.first_name, ' ', u.last_name) as user_name, u.phone as phone FROM tbl_users as u JOIN tbl_vehicles as v on v.user_id = u.userID JOIN tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID WHERE u.userID = :user_id ORDER BY lv.id DESC");
+$stmt = $user_vehicle->runQuery("SELECT lv.id as id,u.userID as user_id,v.vehicleID as vehicle_id, v.name as vehicle_name, v.model_no as vehicle_no, v.chassis_no as chassis_no, lv.address as location, if(lv.is_lost, 'true', 'false')  as is_lost, lv.date_of_lost as date_of_lost, CONCAT(u.first_name, ' ', u.last_name) as user_name, u.phone as phone FROM tbl_users as u JOIN tbl_vehicles as v on v.user_id = u.userID JOIN tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID WHERE u.userID = :user_id ORDER BY lv.id DESC");
 $stmt->execute(array(":user_id"=>$currentUser->userID));
 $alerts =  $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -48,7 +48,7 @@ $alerts =  $stmt->fetchAll(PDO::FETCH_ASSOC);
 						    	?>		
 						    			<tr>
 									        <td><a href="user_details.php?id=<?= $alert['user_id'] ?>"><?= $alert['user_name'] ?></a></td>
-									        <td><a href="vehicle_details.php?id=<?= $alert['vehicle_id'] ?>&notID=<?= $alert["id"] ?>"><?= $alert['vehicle_name'] ?></a></td>
+									        <td><a href="vehicle_details.php?id=<?= $alert['vehicle_id'] ?>&lvID=<?= $alert["id"] ?>"><?= $alert['vehicle_name'] ?></a></td>
 									        <td><?= $alert['location'] ?></td>
 									        <td><?= $alert['date_of_lost'] ?></td>
 									        <td><?= filter_var($alert['is_lost'], FILTER_VALIDATE_BOOLEAN) ? "Lost":"Recovered" ?></td>									       
