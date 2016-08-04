@@ -47,7 +47,7 @@ if($user_login->is_logged_in() !="")
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php"><span>WCarPS</span></a>
+				<a class="navbar-brand" href="index.php"><span>WCarPs</span></a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?= $currentUser->first_name.' '.$currentUser->last_name?> <span class="caret"></span></a>

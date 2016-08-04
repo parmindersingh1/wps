@@ -139,5 +139,8 @@ if(isset($_POST['btn-forgot']))
 			</div>
 		</div>
 	</div> <!-- /container -->
+</div>
 
+</div> 
+</div>
 	<?php include('footer.php') ?>

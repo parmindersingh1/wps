@@ -48,7 +48,7 @@ include('header.php');
 									        <td><a href="search_vehicle.php?id=<?= $lostVehicle['vehicle_id'] ?>"><?= $lostVehicle['vehicle_name'] ?></a></td>
 									        <td><?= $lostVehicle['location'] ?></td>
 									        <td><?= $lostVehicle['date_of_lost'] ?></td>
-									        <td><?= filter_var($lostVehicle['is_found'], FILTER_VALIDATE_BOOLEAN) ? "Recovered": "Lost" ?></td>
+									        <td><?= filter_var($lostVehicle['is_lost'], FILTER_VALIDATE_BOOLEAN) ? "Lost":"Recovered" ?></td>
 									        <td><a href="delete_notification.php?notID=<?= $lostVehicle['id']?>" data-original-title="Remove" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
 									    </tr>
 								<?php	    
