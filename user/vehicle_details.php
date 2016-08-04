@@ -7,18 +7,18 @@ $user_login = new USER();
 $user_vehicle = new Vehicle();
 
 include('header.php'); 
-if(isset($_GET['id']) && isset($_GET['notID'])){
+if(isset($_GET['id']) && isset($_GET['lvID'])){
 	$vehicleID = $_GET['id'];
-	 $sql    = "SELECT * FROM tbl_vehicles WHERE vehicleID = :vehicle_id";
+	$sql    = "SELECT * FROM tbl_vehicles WHERE vehicleID = :vehicle_id";
 	$stmt   = $user_vehicle->runQuery($sql);
 	$result = $stmt->execute(array(":vehicle_id" => $vehicleID));
 	$vehicle  = $stmt->fetch(PDO::FETCH_ASSOC);
-	$notificationId = $_GET['notID'];
+	$alertId = $_GET['lvID'];
 
-	$stmt = $user_vehicle->runQuery("SELECT * FROM  tbl_notifications  WHERE id = :notification_id");
-	$stmt->bindparam(":notification_id",$notificationId, PDO::PARAM_INT);
+	$stmt = $user_vehicle->runQuery("SELECT * FROM  tbl_lost_vehicles  WHERE id = :alert_id");
+	$stmt->bindparam(":alert_id",$alertId, PDO::PARAM_INT);
 	$stmt->execute();
-	$notification  = $stmt->fetch(PDO::FETCH_ASSOC);
+	$alert  = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
@@ -101,7 +101,7 @@ if(isset($_GET['id']) && isset($_GET['notID'])){
 
 				                      <tr>
 				                        <td>Status</td>
-				                        <td><?php echo (filter_var($notification['is_found'], FILTER_VALIDATE_BOOLEAN))?  "Recovered" :  "Lost"?></td>
+				                        <td><?php echo (filter_var($alert['is_lost'], FILTER_VALIDATE_BOOLEAN))?  "Lost" :"Recovered"   ?></td>
 				                      </tr>
 
 				                                                 
@@ -116,10 +116,10 @@ if(isset($_GET['id']) && isset($_GET['notID'])){
 				              </div>
 				            </div>
 
-				<?php if (!filter_var($notification['is_found'], FILTER_VALIDATE_BOOLEAN)) { ?>           
+				<?php if (filter_var($alert['is_lost'], FILTER_VALIDATE_BOOLEAN)) { ?>           
                  <div class="panel-footer">                       
                         <span class="pull-right">
-                            <a href="#" id="foundNotification" data-not="<?= $notificationId?>" data-original-title="Vehicle Recovered" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>Recovered</a>
+                            <a href="#" id="foundNotification" data-not="<?= $alertId ?>" data-original-title="Vehicle Recovered" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>Recovered</a>
                             
                         </span>
                     </div>
@@ -203,7 +203,7 @@ if(isset($_GET['id']) && isset($_GET['notID'])){
 			$('#confirmRecovery').modal({ backdrop: 'static', keyboard: false })
 	        	.one('click', '#delete', function (e) {
 	        		$('.preloader').fadeIn();
-	        		var data = {notificationId: $(me).data("not")};
+	        		var data = {alertId: $(me).data("not")};
 					$.post('../api/found_notification.php',data,function (data) {
 						$('.preloader').fadeOut();	
 						if(data.success) {
