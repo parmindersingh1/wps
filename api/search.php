@@ -29,6 +29,12 @@ if(isset($_POST['query']) && isset($_POST['userID']) && isset($_POST['location']
             unset($searchedUser['userStatus']);
             unset($searchedUser['is_blocked']);
 
+          $response["success"] = true;
+          $response["message"] = "Success! Vehicle Found.";
+          $response["loginUser"] = $searchedUser;
+		  echo json_encode($response);	    
+
+
            
         $stmt = $reg_user->runQuery("INSERT INTO tbl_users_searches(user_id,vehicle_id,location) 
         	values(:user_id, :vehicle_id, :location) ");
@@ -39,10 +45,11 @@ if(isset($_POST['query']) && isset($_POST['userID']) && isset($_POST['location']
 
 		$stmt = $reg_user->runQuery("SELECT MAX(id) AS max FROM tbl_users_searches");
 		$stmt->execute();
-		$searchID = $stmt->fetch(PDO::FETCH_OBJ)->max;
+		$searchID = $stmt->fetch(PDO::FETCH_OBJ)->max;         
 
-
-         $message = '
+            
+  		 
+		  $message = '
             <html>
 	        <head>
 	         <title>Test</title>
@@ -59,13 +66,7 @@ if(isset($_POST['query']) && isset($_POST['userID']) && isset($_POST['location']
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-            mail($searchedUser['userEmail'],$subject,$message,$headers);
-
-            
-  		  $response["success"] = true;
-          $response["message"] = "Success! Vehicle Found.";
-          $response["loginUser"] = $searchedUser;
-		  echo json_encode($response);	     
+            mail($searchedUser['userEmail'],$subject,$message,$headers); 
 	    } 
 	    else {
 	        $response["success"] = false;
