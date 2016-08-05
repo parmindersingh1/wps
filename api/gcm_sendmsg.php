@@ -29,6 +29,7 @@ class GCM {
         
         $fields = array(
             'registration_ids' => $registration_ids,
+            'priority' => 'high',
             'data' => array( "message" => $message, "headMessage" => $headMessage)
         );
         

@@ -25,6 +25,8 @@ if($user_login->is_logged_in() !="")
 
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
+<script src="js/notification.js"></script>
+
 
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
