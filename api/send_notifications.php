@@ -20,10 +20,11 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 	
 	$dol = date_format($dlost,"Y-m-d H:i:s");
 
-	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles WHERE vehicleID = :vehicle_id");
+	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles as v JOIN  tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID  WHERE v.vehicleID = :vehicle_id ORDER BY lv.id DESC LIMIT 1");
 	$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
 	$stmt->execute();
 	$vehicleDetails=$stmt->fetch(PDO::FETCH_ASSOC);
+	
 	if($vehicleDetails) {
 		// $stmt = $user->runQuery("SELECT gcm_regid FROM tbl_users WHERE userId <> :user_id)");
 		$stmt = $user->runQuery("SELECT gcm_regid FROM tbl_users");
@@ -32,6 +33,18 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$regIDs = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 		
 		$message = $vehicleDetails['name']." - ".$vehicleDetails['model_no']." is Stolen!!";
+
+		$message .= '<ul>';
+		$message .= "<li><strong>Vehicle Name:</strong> " .$vehicleDetails['name']. "</li>";
+		$message .= "<li><strong>Vehicle No.:</strong> " . $vehicleDetails['model_no'] . "</li>";
+		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
+		$message .= "<li><strong>Status:</strong> " . filter_var($vehicleDetails['is_lost'], FILTER_VALIDATE_BOOLEAN)?  "Lost" :"Recovered"  . "</li>";
+		$message .= "<li><strong>Location:</strong> " . $vehicleDetails['address'] . "</td></tr>";
+		$message .= "<li><strong>Chassis No.:</strong> " . date("m/d/y g:i A",strtotime($vehicleDetails['date_of_lost'])). "</li>";
+
+		$message .= "</ul>";
+
+		
 		// $message = array("message" => $message);
 		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Vehicle Stolen Alert");
 
