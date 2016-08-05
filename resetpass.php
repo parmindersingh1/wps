@@ -12,7 +12,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 	$id = base64_decode($_GET['id']);
 	$code = $_GET['code'];
 	
-	$stmt = $user->runQuery("SELECT * FROM tbl_users WHERE userID=:uid AND tokenCode=:token");
+	$stmt = $user->runQuery("SELECT * FROM tbl_users WHERE userID=:uid AND userPass=:token");
 	$stmt->execute(array(":uid"=>$id,":token"=>$code));
 	$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 	
