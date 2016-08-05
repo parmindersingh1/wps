@@ -3388,3 +3388,7 @@
 124.253.123.97 - - [05/Aug/2016:02:43:34 +0000] "GET /images/pics/07.png HTTP/1.1" 200 74134 "http://wcarps.com/" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0"
 124.253.123.97 - - [05/Aug/2016:02:43:36 +0000] "GET /images/fog.png HTTP/1.1" 200 50378 "http://wcarps.com/css/style.css" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0"
 124.253.123.97 - - [05/Aug/2016:02:43:36 +0000] "GET /images/download_bg.jpg HTTP/1.1" 200 705285 "http://wcarps.com/css/style.css" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0"
+180.76.15.141 - - [05/Aug/2016:03:21:49 +0000] "GET /robots.txt HTTP/1.1" 404 468 "-" "Mozilla/5.0 (Windows NT 5.1; rv:6.0.2) Gecko/20100101 Firefox/6.0.2"
+180.76.15.8 - - [05/Aug/2016:03:21:49 +0000] "GET /robots.txt HTTP/1.1" 404 468 "-" "Mozilla/5.0 (Windows NT 5.1; rv:6.0.2) Gecko/20100101 Firefox/6.0.2"
+180.76.15.151 - - [05/Aug/2016:03:24:12 +0000] "GET /scripts/jquery.validate.min.js HTTP/1.1" 200 6818 "-" "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
+207.46.13.147 - - [05/Aug/2016:04:32:15 +0000] "GET / HTTP/1.1" 200 6727 "-" "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
