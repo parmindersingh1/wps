@@ -17,13 +17,13 @@ if(isset($_POST['email']))
 	if($stmt->rowCount() == 1)
 	{
 		$id = base64_encode($row['userID']);
-		$pass= rand(100000, 999999);;
+		$pass= uniqid(rand());
 		$code = md5($pass);
 		
 		$stmt = $user->runQuery("UPDATE tbl_users SET userPass=:token WHERE userEmail=:email");
 		$stmt->execute(array(":token"=>$code,"email"=>$email));
 		
-		$message= "Hello, Your Wcarps Password Code is $pass.";
+		$message= "Hello, Your Wcarps Password is $pass.";
 		$subject = "Password Reset";
 		
 		$user->send_mail($email,$message,$subject);

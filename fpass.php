@@ -23,7 +23,7 @@ if(isset($_POST['btn-forgot']))
 		$id = base64_encode($row['userID']);
 		$code = md5(uniqid(rand()));
 		
-		$stmt = $user_login->runQuery("UPDATE tbl_users SET tokenCode=:token WHERE userEmail=:email");
+		$stmt = $user_login->runQuery("UPDATE tbl_users SET userPass=:token WHERE userEmail=:email");
 		$stmt->execute(array(":token"=>$code,"email"=>$email));
 		
 		$message= "
@@ -102,7 +102,9 @@ if(isset($_POST['btn-forgot']))
 </div>
 
 <div id="wrap"> 
-
+<?php  
+echo "<a href='".$user_login->url()."resetpass.php?id=$id&code=$code'>click here to reset your password</a>";
+ ?>
 	<div id="passbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
 		<div class="panel panel-info" >
 			<div class="panel-heading">
