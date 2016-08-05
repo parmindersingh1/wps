@@ -38,7 +38,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message .= "<li><strong>Vehicle Name:</strong> " .$vehicleDetails['name']. "</li>";
 		$message .= "<li><strong>Vehicle No.:</strong> " . $vehicleDetails['model_no'] . "</li>";
 		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
-		$message .= "<li><strong>Status:</strong> " . filter_var($vehicleDetails['is_lost'], FILTER_VALIDATE_BOOLEAN)?  "Lost" :"Recovered"  . "</li>";
+		$message .= "<li><strong>Status:</strong> Lost</li>";
 		$message .= "<li><strong>Location:</strong> " . $vehicleDetails['address'] . "</td></tr>";
 		$message .= "<li><strong>Chassis No.:</strong> " . date("m/d/y g:i A",strtotime($vehicleDetails['date_of_lost'])). "</li>";
 
