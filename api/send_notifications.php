@@ -40,7 +40,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
 		$message .= "<li><strong>Status:</strong> Lost</li>";
 		$message .= "<li><strong>Location:</strong> " . $location . "</li>";
-		$message .= "<li><strong>Date/Time:</strong> " .date_format($dlost,'d/m/Y H:i:s') . "</li>";
+		$message .= "<li><strong>Date/Time:</strong> " .date_format($dlost,'d/m/Y H:i A') . "</li>";
 
 		$message .= "</ul>";
 
