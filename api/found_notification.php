@@ -31,8 +31,7 @@ if(isset($_POST['alertId'])) {
 		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
 		$message .= "<li><strong>Status:</strong>  Recovered</li>";
 		$message .= "<li><strong>Location:</strong> " . $vehicleDetails['address'] . "</td></tr>";
-		$message .= "<li><strong>Chassis No.:</strong> " . date("m/d/y g:i A",strtotime($vehicleDetails['date_of_lost'])). "</li>";
-
+		
 		$message .= "</ul>";
 
 

@@ -20,7 +20,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 	
 	$dol = date_format($dlost,"Y-m-d H:i:s");
 
-	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles as v JOIN  tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID  WHERE v.vehicleID = :vehicle_id ORDER BY lv.id DESC LIMIT 1");
+	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles  WHERE vehicleID = :vehicle_id");
 	$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
 	$stmt->execute();
 	$vehicleDetails=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -39,8 +39,8 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message .= "<li><strong>Vehicle No.:</strong> " . $vehicleDetails['model_no'] . "</li>";
 		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
 		$message .= "<li><strong>Status:</strong> Lost</li>";
-		$message .= "<li><strong>Location:</strong> " . $vehicleDetails['address'] . "</td></tr>";
-		$message .= "<li><strong>Chassis No.:</strong> " . date("m/d/y g:i A",strtotime($vehicleDetails['date_of_lost'])). "</li>";
+		$message .= "<li><strong>Location:</strong> " . $location . "</td></tr>";
+		$message .= "<li><strong>Date/Time:</strong> " .date_format($dlost,"d/m/Y H:i:s"); . "</li>";
 
 		$message .= "</ul>";
 
