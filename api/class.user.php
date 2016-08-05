@@ -334,7 +334,7 @@ class USER
 		$stmt = $this->conn->prepare("SELECT * FROM tbl_users WHERE phone=:phone");
 		$stmt->execute(array(":phone"=>$phone));
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		return $stmt->rowCount() > 0;		
+		return $row;		
 	}
 
 	public function isEmailExists($email) {
