@@ -76,7 +76,7 @@ if(isset($_POST['query']) && isset($_POST['userID']) && isset($_POST['location']
 	    } 
 	    else {
 	        $response["success"] = false;
-	        $response["message"] = "Sorry! Not Vehicle Found...";
+	        $response["message"] = "Sorry! No Vehicle Found...";
 	        echo json_encode($response);
 	    }
 	} else {
