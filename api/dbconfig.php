@@ -14,7 +14,7 @@ class Database
 	    $this->conn = null;    
         try
 		{
-		date_default_timezone_set("Asia/Kolkata");
+            date_default_timezone_set("Asia/Kolkata");
             $now = new DateTime();
             $mins = $now->getOffset() / 60;
             $sgn = ($mins < 0 ? -1 : 1);
@@ -24,9 +24,9 @@ class Database
             $offset = sprintf('%+d:%02d', $hrs*$sgn, $mins);
 
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-	$this->conn->exec("SET time_zone='$offset';");
-	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
+            $this->conn->exec("SET time_zone='$offset';");
 
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
         }
 		catch(PDOException $exception)
 		{

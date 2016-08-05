@@ -83,7 +83,17 @@ class GCM {
         curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
         curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
         $result = curl_exec($ch);
-        curl_close( $ch );      
+        curl_close( $ch );   
+
+        // open file
+         $fd = fopen('../mylog.log', "a");
+         // append date/time to message
+         $str = "[" . date("Y/m/d h:i:s", mktime()) . "] " . (string)$result; 
+         // write string
+         fwrite($fd, $str . "\n");
+         // close file
+         fclose($fd);
+   
         
 
         $flag = json_decode($result)->success;
