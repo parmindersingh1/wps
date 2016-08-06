@@ -32,7 +32,8 @@ include('header.php');
             <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Users</div>
+                    <div class="panel-heading">Users
+                    <a href="send_notifications.php?id=<?= $currentUser->userID ?>" class="btn btn-info pull-right">Send to All</a></div>
                     <div class="panel-body">                        
                         <div class="table-responsive">
                         <table id="usertable" class="table">
@@ -104,27 +105,7 @@ include('header.php');
             $('#vehicletable').DataTable();
         } );
 
-           function sendPushNotification(id){
-                var data = $('form#'+id).serialize();
-                $('form#'+id).unbind('submit');                
-                $.ajax({
-                    url: "device_sendmsg.php",
-                    type: 'GET',
-                    data: data,
-                    beforeSend: function() {
-                         
-                    },
-                    success: function(data, textStatus, xhr) {
-                        console.log(data);                         
-                          $('.txt_message').val("");
-                    },
-                    error: function(xhr, textStatus, errorThrown) {
-                         console.log(errorThrown);
-                          alert(data);
-                    }
-                });
-                return false;
-            }
+           
     </script>   
 </body>
 

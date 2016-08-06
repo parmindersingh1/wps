@@ -14,7 +14,7 @@ if(isset($_POST['email']))
 	$stmt = $user->runQuery("SELECT userID FROM tbl_users WHERE userEmail=:email LIMIT 1");
 	$stmt->execute(array(":email"=>$email));
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);	
-	if($stmt->rowCount() == 1)
+	if($stmt->rowCount() > 0)
 	{
 		$id = base64_encode($row['userID']);
 		$pass= uniqid(rand());
