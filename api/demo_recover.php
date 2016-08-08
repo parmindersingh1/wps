@@ -21,10 +21,35 @@ if(isset($_POST['alertId']) && isset($_POST['userId'])) {
 	
 	$message = "Demo Vehicle - XX XXXXX is Recovered!!";	
 
+	$message .= '<ul>';
+	$message .= "<li><strong>Vehicle Name:</strong> Demo Vehicle</li>";
+	$message .= "<li><strong>Vehicle No.:</strong> XX XXXXXX</li>";
+	$message .= "<li><strong>Chassis No.:</strong> XX/XXXXXXXX</li>";
+	$message .= "<li><strong>Status:</strong>  Recovered</li>";
+	$message .= "<li><strong>Location:</strong> Demo Address</td></tr>";
+	
+	$message .= "</ul>";
+
 	// $message = array("message" => $message);
 	$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Recovery Alert");
 
 	if($res) {			
+		$stmt = $user->runQuery("INSERT INTO tbl_notifications (user_id,message) VALUES ( :user_id, :message)");
+		$stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+		$stmt->bindparam(":message",$message);
+		$stmt->execute();
+
+		$stmt = $user->runQuery('SELECT MAX(id) AS max FROM tbl_notifications');
+		$stmt->execute();
+		$notification_id =  $stmt->fetch(PDO::FETCH_OBJ)->max;
+
+
+		$sql = "INSERT INTO tbl_users_notifications (user_id, notification_id) VALUES (:user_id, :notification_id)";			
+	    $stmt = $user->runQuery($sql);
+	    $stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+	    $stmt->bindparam(":notification_id",$notification_id, PDO::PARAM_INT);
+	    $stmt->execute();
+
 		$response["success"] = true;
 	    $response["message"] = "Notification Sent Successfully";
 	    echo json_encode($response);
