@@ -20,56 +20,63 @@ if(isset($_POST['query']) && isset($_POST['userID']) && isset($_POST['location']
 		$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
      $searchedUser = $vehicle->search($query);
-    if ($searchedUser) {   	  
-    	    $vehicleID = $searchedUser['vehicleID'];
-    	    unset($searchedUser['vehicleID']);
-            unset($searchedUser['userName']);
-            unset($searchedUser['tokenCode']);
-            unset($searchedUser['userPass']);
-            unset($searchedUser['userStatus']);
-            unset($searchedUser['is_blocked']);
+    if ($searchedUser) { 
+    	if($searchedUser['userID'] != $userId) {  	  
+		    	    $vehicleID = $searchedUser['vehicleID'];
+		    	    unset($searchedUser['vehicleID']);
+		            unset($searchedUser['userName']);
+		            unset($searchedUser['tokenCode']);
+		            unset($searchedUser['userPass']);
+		            unset($searchedUser['userStatus']);
+		            unset($searchedUser['is_blocked']);
 
-           
-        $stmt = $reg_user->runQuery("INSERT INTO tbl_users_searches(user_id,vehicle_id,location) 
-        	values(:user_id, :vehicle_id, :location) ");
-		$stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
-		$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
-		$stmt->bindparam(":location",$location);
-		$stmt->execute();		
-
-		$stmt = $reg_user->runQuery("SELECT MAX(id) AS max FROM tbl_users_searches");
-		$stmt->execute();
-		$searchID = $stmt->fetch(PDO::FETCH_OBJ)->max;
+		          $response["success"] = true;
+		          $response["message"] = "Success! Vehicle Found.";
+		          $response["loginUser"] = $searchedUser;
+				  echo json_encode($response);	    
 
 
-         $message = '
-            <html>
-	        <head>
-	         <title>Test</title>
-	        </head>
-	        <body>	           
-	           <p>'.$user['first_name'].' '.$user['last_name'].' searched your vehicle with model or chassis no '.$query.'</p>
-	           For More Details <a href="http://wcarps.com/user/search_user.php?searchID='.$searchID.'">Click Here</a>
-	        </body>
-	        </html> ';
-	        			 
-			$subject = "Wcarps Vehicle Search Info";
+		           
+		        $stmt = $reg_user->runQuery("INSERT INTO tbl_users_searches(user_id,vehicle_id,location) 
+		        	values(:user_id, :vehicle_id, :location) ");
+				$stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+				$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
+				$stmt->bindparam(":location",$location);
+				$stmt->execute();		
 
-			$headers = 'From: info@wcarps.com'. '\r\n'; 
-			$headers = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+				$stmt = $reg_user->runQuery("SELECT MAX(id) AS max FROM tbl_users_searches");
+				$stmt->execute();
+				$searchID = $stmt->fetch(PDO::FETCH_OBJ)->max;         
 
-            mail($searchedUser['userEmail'],$subject,$message,$headers);
+		            
+		  		 
+				  $message = '
+		            <html>
+			        <head>
+			         <title>Test</title>
+			        </head>
+			        <body>	           
+			           <p>'.$user['first_name'].' '.$user['last_name'].' searched your vehicle with model or chassis no '.$query.'</p>
+			           For More Details <a href="http://wcarps.com/user/search_user.php?searchID='.$searchID.'">Click Here</a>
+			        </body>
+			        </html> ';
+			        			 
+					$subject = "Wcarps Vehicle Search Info";
 
-            
-  		  $response["success"] = true;
-          $response["message"] = "Success! Vehicle Found.";
-          $response["loginUser"] = $searchedUser;
-		  echo json_encode($response);	     
+					$headers = 'From: info@wcarps.com'. '\r\n'; 
+					$headers = "MIME-Version: 1.0" . "\r\n";
+					$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+		            mail($searchedUser['userEmail'],$subject,$message,$headers); 
+		        } else {
+		        	$response["success"] = false;
+			        $response["message"] = "Sorry! No Search Result, it's Your Vehicle...";
+			        echo json_encode($response);
+		        }
 	    } 
 	    else {
 	        $response["success"] = false;
-	        $response["message"] = "Sorry! Not Vehicle Found...";
+	        $response["message"] = "Sorry! No Vehicle Found...";
 	        echo json_encode($response);
 	    }
 	} else {

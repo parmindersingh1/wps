@@ -40,12 +40,11 @@ if(isset($_GET['id'])) {
          <div class="row">
             <div class="col-md-6 col-md-offset-3">
             <hr/>            
-            <form id="<?php echo $user['userID'] ?>" name="" method="post" onsubmit="return sendPushNotification('<?php echo $user["userID"] ?>')">
-                <label>RegistrationID: </label> <span><?php echo $user["gcm_regid"] ?></span>
-                <br><br>                              
+            <form id="formall" name="" method="post" onsubmit="return sendPushNotifications()">
+                                       
                 <textarea class="form-control" rows="3" name="message" cols="25" class="txt_message" placeholder="Type message here"></textarea>
                 <p></p>
-                <input type="hidden" name="regId" value="<?php echo $user["gcm_regid"] ?>"/>
+           
                 <input type="hidden" name="userId" value="<?php echo $user["userID"] ?>"/>
                 <input type="submit" class="send_btn btn btn-lg btn-primary pull-right" value="Send" onclick=""/>
                 </div>
@@ -89,11 +88,11 @@ if(isset($_GET['id'])) {
             $('#vehicletable').DataTable();
         } );
 
-       function sendPushNotification(id){
-            var data = $('form#'+id).serialize();
-            $('form#'+id).unbind('submit');                
+       function sendPushNotifications(){
+            var data = $('#formall').serialize();
+            $('#formall').unbind('submit');                
             $.ajax({
-                url: "device_sendmsg.php",
+                url: "device_sendmessages.php",
                 type: 'GET',
                 data: data,
                 beforeSend: function() {

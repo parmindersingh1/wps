@@ -27,8 +27,8 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 	
 	if($vehicleDetails) {
 		// $stmt = $user->runQuery("SELECT gcm_regid FROM tbl_users WHERE userId <> :user_id)");
-		$stmt = $user->runQuery("SELECT gcm_regid FROM tbl_users");
-		// $stmt->bindparam(":vehicle_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
+		$stmt = $user->runQuery("SELECT gcm_regid FROM tbl_users WHERE userId = :user_id");
+		$stmt->bindparam(":user_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
 		$stmt->execute();
 		$regIDs = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 		
@@ -43,60 +43,11 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message .= "<li><strong>Date/Time:</strong> " .date_format($dlost,'d/m/Y H:i A') . "</li>";
 
 		$message .= "</ul>";
-
 		
 		// $message = array("message" => $message);
-		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Vehicle Stolen Alert");
+		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Stolen Alert");
 
-		if($res) {	    
-
-			$stmt = $user->runQuery("SELECT userID,userEmail,first_name,last_name,phone  FROM tbl_users WHERE userId=:user_id");
-			$stmt->bindparam(":user_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
-			$stmt->execute();
-			$vehUser = $stmt->fetch(PDO::FETCH_ASSOC);
-			
-
-			$stmt = $user->runQuery("INSERT INTO tbl_lost_vehicles (address,vehicle_id,date_of_lost) VALUES (:location, :vehicle_id, :dol)");
-			$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
-			$stmt->bindparam(":location",$location);
-			$stmt->bindparam(":dol",$dol, PDO::PARAM_STR);
-			$stmt->execute();
-
-			$stmt = $user->runQuery("INSERT INTO tbl_notifications (user_id,message) VALUES ( :user_id, :message)");
-			$stmt->bindparam(":user_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
-			$stmt->bindparam(":message",$message);
-			$stmt->execute();
-
-
-
-			$stmt = $user->runQuery('SELECT MAX(id) AS max FROM tbl_notifications');
-			$stmt->execute();
-			$notification_id =  $stmt->fetch(PDO::FETCH_OBJ)->max;
-
-
-			// file_put_contents( 'debug' . time() . '.log', var_export( $res, true));
-
-			// $user->add_notifications($notification_id);
-
-			$stmt = $user->runQuery("SELECT userID FROM tbl_users");
-			$stmt->execute();
-			$data = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
-			$sql = "INSERT INTO tbl_users_notifications (user_id, notification_id) VALUES ";
-			$insertQuery = array();
-			$insertData = array();
-			foreach ($data as $user_id) {
-			    $insertQuery[] = '(?, ?)';
-			    $insertData[] = $user_id;
-			    $insertData[] = $notification_id;
-			}
-			
-
-			if (!empty($insertQuery)) {
-			    $sql .= implode(', ', $insertQuery);
-			    $stmt = $user->runQuery($sql);
-			    $stmt->execute($insertData);
-			}
-			
+		if($res) {	 			
 			$response["success"] = true;
 		    $response["message"] = "Notification Sent Successfully";
 		    echo json_encode($response);
@@ -117,3 +68,4 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 	    echo json_encode($response);
 }
 ?>
+		

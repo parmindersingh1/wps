@@ -1,8 +1,7 @@
 <?php
-if (isset($_GET["regId"]) && isset($_GET["message"]) && isset($_GET["userId"])) {
-    $regId = $_GET["regId"];
-    $message = $_GET["message"];
+if (isset($_GET["userId"]) && isset($_GET["message"])) {
     $userId = $_GET["userId"];
+    $message = $_GET["message"];
 
 	require_once dirname(__FILE__).'/../api/class.user.php';
 	require_once dirname(__FILE__).'/../api/class.vehicle.php';
@@ -12,11 +11,13 @@ if (isset($_GET["regId"]) && isset($_GET["message"]) && isset($_GET["userId"])) 
 	$user_login = new USER();
 	$user_vehicle = new Vehicle();
     $gcm = new GCM();
- 
-    $registration_ids = array($regId);
-    // $message = array("message" => $message);
- 
-    $result = $gcm->sendMultiple($registration_ids, $message, "WCarPs");
+
+    $stmt = $user_login->runQuery("SELECT gcm_regid FROM tbl_users");
+	// $stmt->bindparam(":vehicle_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
+	$stmt->execute();
+	$regIDs = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+    
+    $result = $gcm->sendMultiple($regIDs, $message, "WCarPs");
  	
     if($result) {
     	$stmt = $user_login->runQuery("INSERT INTO tbl_notifications (user_id,message) VALUES ( :user_id, :message)");
@@ -54,7 +55,7 @@ if (isset($_GET["regId"]) && isset($_GET["message"]) && isset($_GET["userId"])) 
 		} else {
 			echo false;
 		}
+
 } else {
 	echo false;
 }
-?>

@@ -100,7 +100,8 @@ class VEHICLE
 	public function search($query) {		
 		try
 		{		
-		   $stmt = $this->conn->prepare("SELECT v.vehicleID,  u.* FROM tbl_users as u JOIN tbl_vehicles as v on v.user_id = u.userID  WHERE  (LOWER(REPLACE(model_no, ' ', '')) = LOWER(REPLACE(:query, ' ', ''))  OR  LOWER(REPLACE(chassis_no, ' ', '')) = LOWER(REPLACE(:query, ' ', ''))) AND u.userStatus = 'Y'");		
+		   $stmt = $this->conn->prepare("SELECT v.vehicleID,  u.* FROM tbl_users as u JOIN tbl_vehicles as v on v.user_id = u.userID  WHERE  (LOWER(REPLACE(REPLACE(model_no, ' ', ''),'-','')) = LOWER(REPLACE(:query, ' ', ''))  OR  LOWER(REPLACE(chassis_no, ' ', '')) = LOWER(REPLACE(:query, ' ', ''))) AND u.userStatus = 'Y'");	
+
 				
 			$stmt->bindparam(":query",$query);			
 

@@ -53,10 +53,4 @@ if(isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['licence']))
 
 
 
-
-
-
-
-
-
 ?>

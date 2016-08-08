@@ -31,7 +31,7 @@ if(isset($_POST['code']))
 		else
 		{
 			$response["success"] = false;
-			$response["message"] = "Your Account is allready Activated";
+			$response["message"] = "Your Account is already Activated";
 			echo json_encode($response);				
 		}
 	}

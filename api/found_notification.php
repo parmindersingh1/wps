@@ -12,7 +12,7 @@ $response = array();
 if(isset($_POST['alertId'])) {
 	$alertId = $_POST['alertId'];
 
-	$stmt = $reg_vehicle->runQuery("SELECT v.* FROM tbl_vehicles as v JOIN tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID WHERE lv.id = :alert_id");
+	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles as v JOIN tbl_lost_vehicles as lv on lv.vehicle_id = v.vehicleID WHERE lv.id = :alert_id");
 	$stmt->bindparam(":alert_id",$alertId, PDO::PARAM_INT);
 	$stmt->execute();
 	$vehicleDetails=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,6 +24,17 @@ if(isset($_POST['alertId'])) {
 		$regIDs = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 		
 		$message = $vehicleDetails['name']." - ".$vehicleDetails['model_no']." is Recovered!!";
+
+		$message .= '<ul>';
+		$message .= "<li><strong>Vehicle Name:</strong> " .$vehicleDetails['name']. "</li>";
+		$message .= "<li><strong>Vehicle No.:</strong> " . $vehicleDetails['model_no'] . "</li>";
+		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
+		$message .= "<li><strong>Status:</strong>  Recovered</li>";
+		$message .= "<li><strong>Location:</strong> " . $vehicleDetails['address'] . "</td></tr>";
+		
+		$message .= "</ul>";
+
+
 		// $message = array("message" => $message);
 		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Vehicle Recovery Alert");
 
