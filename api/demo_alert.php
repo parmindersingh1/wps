@@ -17,7 +17,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 	// $mil =  $dlost;
 	// $seconds = $mil / 1000;
 	// $dol =  date("Y-m-d H:i:s", $seconds);
-	
+
 	$dol = date_format($dlost,"Y-m-d H:i:s");
 
 	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles  WHERE vehicleID = :vehicle_id");

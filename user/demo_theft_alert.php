@@ -145,13 +145,17 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				var vehID = $("select[name='vehicleID']").val();
 				var location = $("input[name='location']").val();
 				var sendData = $(this).serialize();
-				if(!isEmpty(vehID) && !isEmpty(location)) {		
-				$('#confirmRecovery').modal({ backdrop: 'static', keyboard: false })
+				
+				if(!isEmpty(vehID) && !isEmpty(location)) {	
+					$('#confirmRecovery').modal({ backdrop: 'static', keyboard: false })
 	        		.one('click', '#delete', function (e) {		
 
 						$('.preloader').fadeIn();	
-						$.post('../api/send_notifications.php',sendData,function (data) {
-							$('.preloader').fadeOut();				
+
+						$.post('../api/demo_alert.php',sendData,function (data) {
+							alert(data);
+							console.log(data);
+						$('.preloader').fadeOut();				
 							
 							if(data.success) {
 								$(".alert-success").empty()

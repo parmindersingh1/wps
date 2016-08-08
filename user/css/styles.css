@@ -987,6 +987,9 @@ h1.page-header {
 .icon-track {
 	background: url('../../img/gps-route.png') no-repeat left center;
 }
+.icon-demo {
+	background: url('../../img/demo.png') no-repeat left center;
+}
 .icon-logout {
 	background: url('../../img/power.png') no-repeat left center;
 }
