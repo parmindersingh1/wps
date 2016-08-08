@@ -77,7 +77,7 @@ include('header.php');
 				            <div class="panel-body">
 				              <div class="row">
 				                <div class="col-md-3 col-lg-3 " align="center"><?php
-				                echo '<img href="../images/demo.jpg" class="img-circle img-responsive"/>';
+				                echo '<img src="../images/demo.jpg" class="img-circle img-responsive"/>';
 				                ?>
 				                 </div>
 				                
