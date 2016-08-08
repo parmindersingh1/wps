@@ -25,7 +25,6 @@ if($user_login->is_logged_in() !="")
 
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
-<script src="js/notification.js"></script>
 
 
 <!--[if lt IE 9]>
@@ -79,6 +78,8 @@ if($user_login->is_logged_in() !="")
 	<ul class="nav menu">
 	    <li ><a  href="index.php"><i class="icon icon-home"></i>Home</a></li>
 		<li ><a  href="vehicles.php"><i class="icon icon-vehicle"></i>Vehicle Information</a></li>
+		<li ><a  href="demo_theft_alert.php"><i class="icon icon-demo"></i>Demo Theft Alert </a></li>	
+		<li ><a  href="demo_recovery_alert.php"><i class="icon icon-demo"></i>Demo My Alerts </a></li>	
 		<li ><a  href="theft_alert.php"><i class="icon icon-theft"></i>Theft Alert </a></li>	
 		<li ><a  href="alerts.php"><i class="icon icon-alert"></i>My Alerts</a></li>
 		<li ><a  href="user_notifications.php"><i class="icon icon-notify"></i>Notifications</a></li>
@@ -90,3 +91,27 @@ if($user_login->is_logged_in() !="")
 		<li ><a  href="../logout.php"><i class="icon icon-logout"></i>Logout</a></li>		
 	</ul>
 	</div><!--/.sidebar-->
+
+<!-- Modal -->
+  <div class="modal fade" id="confirmRecovery" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <p> Are you sure to Send Notification?</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Ok</button>
+		    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
