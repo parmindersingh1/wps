@@ -35,6 +35,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message = $vehicleDetails['name']." - ".$vehicleDetails['model_no']." is Stolen!!";
 
 		$message .= '<ul>';
+		$message .= "<li>Demo Notification Information</li>";		
 		$message .= "<li><strong>Vehicle Name:</strong> " .$vehicleDetails['name']. "</li>";
 		$message .= "<li><strong>Vehicle No.:</strong> " . $vehicleDetails['model_no'] . "</li>";
 		$message .= "<li><strong>Chassis No.:</strong> " . $vehicleDetails['chassis_no']. "</li>";
