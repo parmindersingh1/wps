@@ -2518,3 +2518,18 @@ footer { padding: 80px 0; }
 .intro-block .type {
 	font-size: 25px;
 }
+
+/* login */
+
+
+.mainbox input[type="text"],.mainbox input[type="password"] {
+  box-shadow:none;
+  border-color:#ddd;
+  border-radius:0;
+  border-bottom: 1px solid;
+}
+
+.mainbox button {
+	width: 100%;
+}
+

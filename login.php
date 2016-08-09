@@ -83,7 +83,6 @@ if(isset($_POST['btn-login']))
         <div class="panel panel-info" >
             <div class="panel-heading">
                 <div class="panel-title">Sign In</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="fpass.php">Forgot password?</a></div>
             </div>     
 
             <div style="padding-top:30px" class="panel-body" >
@@ -93,7 +92,7 @@ if(isset($_POST['btn-login']))
                 {
                     ?>
                     <div class='alert alert-danger col-sm-12'>
-                        <button class='close' data-dismiss='alert'>&times;</button>
+                        <a class='close' data-dismiss='alert'>&times;</a>
                         <strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.Click here to resend code <a href='<?php echo "resend.php?id=".$_GET["id"] ?>'>resend</a> 
                     </div>
                     <?php  } ?>                      
@@ -102,7 +101,7 @@ if(isset($_POST['btn-login']))
                     {
                         ?>
                         <div class='alert alert-danger col-sm-12'>
-                            <button class='close' data-dismiss='alert'>&times;</button>
+                            <a class='close' data-dismiss='alert'>&times;</a>
                             <strong>Wrong Details!</strong> 
                         </div>
                     <?php } 
@@ -111,7 +110,7 @@ if(isset($_POST['btn-login']))
                     {
                     ?>
                     <div class='alert alert-success col-sm-12'>
-                        <button class='close' data-dismiss='alert'>&times;</button>
+                        <a class='close' data-dismiss='alert'>&times;</a>
                         <strong>Success!</strong> Please Check confirmation Email.
                     </div>
                     <?php  } ?> 
@@ -142,10 +141,11 @@ if(isset($_POST['btn-login']))
                         <!-- Button -->
 
                         <div class="col-sm-12 controls">
-                          <button  id="btn-login" type="submit" style="float:right;" name="btn-login" class="btn btn-success" >Login  </button>                                    
+                          <button  id="btn-login" type="submit"  name="btn-login" class="btn btn-success" >Login  </button>                                    
 
                         </div>
-                        <a href="index.php">Back to Home page</a>
+                        <p> <a href="fpass.php">Forgot password?</a></p>
+                       <p> <a href="index.php">Back to Home page</a></p>
                   </div>
 
 
