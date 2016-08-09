@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 $response = array();
 if(isset($_POST['userId'])) {
 	$userID = $_POST['userId'];
-	$stmt = $reg_user->runQuery("SELECT n.id as id, n.message as notification FROM tbl_notifications as n JOIN `tbl_users_notifications` as un on un.notification_id = n.id  WHERE un.user_id = :user_id ORDER BY n.id DESC LIMIT 50 ");
+	$stmt = $reg_user->runQuery("SELECT n.id as id, n.message as notification, if(un.is_seen, 'true', 'false') as is_seen FROM tbl_notifications as n JOIN `tbl_users_notifications` as un on un.notification_id = n.id  WHERE un.user_id = :user_id ORDER BY n.id DESC LIMIT 50 ");
 	    $stmt->bindparam(":user_id",$userID, PDO::PARAM_INT);
       $stmt->execute();
       $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);

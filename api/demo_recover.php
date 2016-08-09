@@ -27,7 +27,7 @@ if(isset($_POST['alertId']) && isset($_POST['userId'])) {
 	$message .= "<li><strong>Chassis No.:</strong> XX/XXXXXXXX</li>";
 	$message .= "<li><strong>Status:</strong>  Recovered</li>";
 	$message .= "<li><strong>Location:</strong> Demo Address</td></tr>";
-	
+	$message .= "<li><strong>Date/Time:</strong> ". date('d/m/Y h:i a')."</td></tr>";
 	$message .= "</ul>";
 
 	// $message = array("message" => $message);
