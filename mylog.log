@@ -1,0 +1,5 @@
+[2016/08/09 02:03:27] {"multicast_id":5715116974078062745,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470731606916319%c1a682fff9fd7ecd"}]}
+[2016/08/09 02:13:59] {"multicast_id":4810009435758758997,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732238987058%c1a682fff9fd7ecd"}]}
+[2016/08/09 02:14:18] {"multicast_id":7647943596803005126,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732258757863%c1a682fff9fd7ecd"}]}
+[2016/08/09 02:14:41] {"multicast_id":8791489844426439969,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732281126907%c1a682fff9fd7ecd"}]}
+[2016/08/09 02:14:57] {"multicast_id":7340616161306072454,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732297500392%c1a682fff9fd7ecd"}]}

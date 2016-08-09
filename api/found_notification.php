@@ -37,7 +37,7 @@ if(isset($_POST['alertId'])) {
 
 
 		// $message = array("message" => $message);
-		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Vehicle Recovery Alert");
+		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Vehicle Recovery Alert",$vehicleDetails["vehicleID"]);
 
 		if($res) {	 
 			$stmt = $user->runQuery("UPDATE tbl_lost_vehicles SET is_lost = 0 WHERE id = :alert_id");
