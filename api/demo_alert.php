@@ -46,7 +46,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		$message .= "</ul>";
 		
 		// $message = array("message" => $message);
-		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Stolen Alert");
+		$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Stolen Alert", 0);
 
 		if($res) {
 

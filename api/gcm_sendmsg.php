@@ -25,12 +25,12 @@ class GCM {
     }
 
     // sending push message to multiple users by gcm registration ids
-    public function sendMultiple($registration_ids, $message, $headMessage) {
+    public function sendMultiple($registration_ids, $message, $headMessage, $id) {
         
         $fields = array(
             'registration_ids' => $registration_ids,
             'priority' => 'high',
-            'data' => array( "message" => $message, "headMessage" => $headMessage)
+            'data' => array( "message" => $message, "headMessage" => $headMessage, "id" => $id)
         );
         
         return $this->sendPushNotification($fields);

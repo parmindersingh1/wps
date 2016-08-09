@@ -31,7 +31,7 @@ if(isset($_POST['alertId']) && isset($_POST['userId'])) {
 	$message .= "</ul>";
 
 	// $message = array("message" => $message);
-	$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Recovery Alert");
+	$res = $gcm->sendMultiple(array_unique($regIDs), $message, "WCarPs Demo Vehicle Recovery Alert", 0);
 
 	if($res) {			
 		$stmt = $user->runQuery("INSERT INTO tbl_notifications (user_id,message) VALUES ( :user_id, :message)");
