@@ -34,6 +34,11 @@ include('header.php');
 // 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 // }
 
+$stmt = $user_vehicle->runQuery("SELECT found_alerts FROM tbl_users_demos WHERE user_id = :user_id");
+$stmt->bindparam(":user_id",$currentUser->userID, PDO::PARAM_INT);
+$stmt->execute();
+$foundCount = $stmt->fetchColumn();
+
  ?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -45,6 +50,25 @@ include('header.php');
 		</div><!--/.row-->
 		
 		
+<div class="modal fade" id="demoRecoveryCount" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Information</h4>
+        </div>
+        <div class="modal-body">
+          <p> You Have <?= $foundCount ?> Demo Left</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="okBtn">Ok</button>  
+		  </div>
+      </div>
+      
+    </div>
+  </div>
 				
 		<div class="row">
 			<div class="col-lg-12">
@@ -65,7 +89,7 @@ include('header.php');
 					</div>
 
 
-
+					<input type="hidden" id="foundCount" value="<?=$foundCount ?>">
 
 					<div class="container">
 				      <div class="row">
@@ -182,18 +206,26 @@ include('header.php');
 
 		$(document).ready(function() {
 		    $('#usertable').DataTable();
+		    $('#demoRecoveryCount').modal({ backdrop: 'static', keyboard: false })
+		    	.one('click', '#okBtn', function (e) {
+		    		if(parseInt($("#foundCount").val()) <= 0) {
+			 			history.go(-1);
+			 		} 
+
+		    	});
 		} );
 
 		$("#foundNotification").on("click",function (event) {
 			// body...			
 			var me = this;
 			event.preventDefault();
-			$('#confirmRecovery').modal({ backdrop: 'static', keyboard: false })
+			$('#confirmDemoAlert').modal({ backdrop: 'static', keyboard: false })
 	        	.one('click', '#delete', function (e) {
 	        		$('.preloader').fadeIn();
 	        		var data = {
 	        					alertId: $(me).data("not"),
-	        					userId: $("#userId").val()
+	        					userId: $("#userId").val(),
+	        					local: true
 	        					};
 					$.post('../api/demo_recover.php',data,function (data) {
 						$('.preloader').fadeOut();	
