@@ -55,7 +55,15 @@ class USER
 			$stmt->bindparam(":licence",$licence);
 			$stmt->execute();	
 			
-			return $stmt;
+			if($stmt) {
+				$userId = $this->lasdID();
+				$stmt = $this->conn->prepare("INSERT INTO tbl_users_demos(user_id) values(:user_id)");
+				$stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+				$stmt->execute();
+				return $stmt;
+			} else {
+				return false;
+			}
 		}
 		catch(PDOException $ex)
 		{

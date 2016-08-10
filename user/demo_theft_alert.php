@@ -13,6 +13,12 @@ $stmt->bindparam(":user_id",$currentUser->userID, PDO::PARAM_INT);
 $stmt->execute();
 $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt = $user_vehicle->runQuery("SELECT theft_alerts FROM tbl_users_demos WHERE user_id = :user_id");
+$stmt->bindparam(":user_id",$currentUser->userID, PDO::PARAM_INT);
+$stmt->execute();
+$alertCount = $stmt->fetchColumn();
+// var_dump($alertCount);
+// die();
 ?>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOzwf7l3jIW3LA3aAKCDxKyi-99yWoZWo&libraries=places"></script>
 
@@ -25,11 +31,30 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	</div><!--/.row-->
 	
 	
-	
+<div class="modal fade" id="demoAlertCount" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Information</h4>
+        </div>
+        <div class="modal-body">
+          <p> You Have <?= $alertCount ?> Demo Left</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="okBtn">Ok</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div>
+
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Theft Alert</div>
+				<div class="panel-heading">Demo Theft Alert</div>
 				<div class="panel-body">	
 
 
@@ -44,7 +69,7 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					  
 					</div>
-
+					<input type="hidden" id="alertCount" value="<?=$alertCount ?>">
 
 					<div class="container">
 						<div class="row">
@@ -77,6 +102,7 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 								            					            
 								            			            
 								           <input type="hidden" name="dol" value="" />
+								           <input type="hidden" name="local" value="true" />
 								            
 
 								            <div class="form-group">
@@ -138,6 +164,13 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		$(document).ready(function() {
 			$('#usertable').DataTable();
+			 $('#demoAlertCount').modal({ backdrop: 'static', keyboard: false })
+			 	.one('click', '#okBtn', function (e) {	
+			 		if(parseInt($("#alertCount").val()) <= 0) {
+			 			history.go(-1);
+			 		} 
+
+			 	});
 
 			$("#form-alert").on("submit",function (event) {
 				$("input[name='dol']").val((new Date()).toISOString());
@@ -147,15 +180,13 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				var sendData = $(this).serialize();
 				
 				if(!isEmpty(vehID) && !isEmpty(location)) {	
-					$('#confirmRecovery').modal({ backdrop: 'static', keyboard: false })
+					$('#confirmDemoAlert').modal({ backdrop: 'static', keyboard: false })
 	        		.one('click', '#delete', function (e) {		
 
 						$('.preloader').fadeIn();	
 
 						$.post('../api/demo_alert.php',sendData,function (data) {
-							alert(data);
-							console.log(data);
-						$('.preloader').fadeOut();				
+							$('.preloader').fadeOut();				
 							
 							if(data.success) {
 								$(".alert-success").empty()

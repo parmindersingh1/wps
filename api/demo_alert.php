@@ -75,6 +75,11 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		    $stmt->bindparam(":notification_id",$notification_id, PDO::PARAM_INT);
 		    $stmt->execute();
 			 			
+			if(isset($_POST['local'])) 	{
+				$stmt = $user->runQuery('UPDATE TABLE tbl_users_demos SET theft_alerts = theft_alerts - 1 WHERE user_id = :user_id');
+			    $stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+			    $stmt->execute();
+			}	
 			$response["success"] = true;
 		    $response["message"] = "Notification Sent Successfully";
 		    echo json_encode($response);

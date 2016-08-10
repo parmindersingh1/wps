@@ -50,6 +50,12 @@ if(isset($_POST['alertId']) && isset($_POST['userId'])) {
 	    $stmt->bindparam(":notification_id",$notification_id, PDO::PARAM_INT);
 	    $stmt->execute();
 
+	    if(isset($_POST['local'])) 	{
+			$stmt = $user->runQuery('UPDATE TABLE tbl_users_demos SET found_alerts = found_alerts - 1 WHERE user_id = :user_id');
+		    $stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+		    $stmt->execute();
+		}	
+
 		$response["success"] = true;
 	    $response["message"] = "Notification Sent Successfully";
 	    echo json_encode($response);

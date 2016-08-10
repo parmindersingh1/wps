@@ -3,3 +3,4 @@
 [2016/08/09 02:14:18] {"multicast_id":7647943596803005126,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732258757863%c1a682fff9fd7ecd"}]}
 [2016/08/09 02:14:41] {"multicast_id":8791489844426439969,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732281126907%c1a682fff9fd7ecd"}]}
 [2016/08/09 02:14:57] {"multicast_id":7340616161306072454,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1470732297500392%c1a682fff9fd7ecd"}]}
+[2016/08/10 06:39:37] {"multicast_id":8560018292575336098,"success":0,"failure":1,"canonical_ids":0,"results":[{"error":"NotRegistered"}]}
