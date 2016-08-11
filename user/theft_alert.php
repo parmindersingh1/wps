@@ -72,7 +72,7 @@ $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 								              </div>								              
 								             
 								              <div class="form-group">
-								                 <input id="autocomplete" placeholder="Enter your address" class="form-control" name="location"  type="text" required=""></input>
+								                 <input id="autocomplete" placeholder="Enter your Location" class="form-control" name="location"  type="text" required=""></input>
 								              </div>				              
 								            					            
 								            			            
