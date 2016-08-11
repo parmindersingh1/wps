@@ -1,4 +1,6 @@
 <?php
+// error_reporting(-1);
+// ini_set('display_errors', 'On');
 date_default_timezone_set("Asia/Kolkata");
 if($user_login->is_logged_in() !="")
 {  
