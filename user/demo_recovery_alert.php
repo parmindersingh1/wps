@@ -60,7 +60,7 @@ $foundCount = $stmt->fetchColumn();
           <h4 class="modal-title">Information</h4>
         </div>
         <div class="modal-body">
-          <p> You Have <?= $foundCount ?> Demo Left</p>
+          <p> You have <?= $foundCount ?> Demo Remaining</p>
         </div>
          <div class="modal-footer">
 		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="okBtn">Ok</button>  
