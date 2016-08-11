@@ -18,6 +18,27 @@ include('header.php');
 
 
  ?>
+
+ <div class="modal fade" id="confirmDelete" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <p> Are you sure to Remove Notification?</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="removeNot">Ok</button>
+		    <button type="button" data-dismiss="modal" class="btn" >Cancel</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -46,7 +67,7 @@ include('header.php');
 						    	?>		
 						    			<tr>
 									        <td><a href="notification_details.php?notID=<?= $notification['id'] ?>"><?= substr($notification['notification'],0,20) ?>...</a></td>									        
-									        <td><a href="delete_notification.php?notID=<?= $notification['unID']?>" data-original-title="Remove" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
+									        <td><a id="deleteNotification" href="delete_notification.php?notID=<?= $notification['unID']?>" data-original-title="Remove" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" ><i class="glyphicon glyphicon-remove"></i></a></td>
 									    </tr>
 								<?php	    
 						    		}
@@ -67,12 +88,6 @@ include('header.php');
 	<script src="js/bootstrap.min.js"></script>	
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	
 	<script>
 		!function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
@@ -89,8 +104,21 @@ include('header.php');
 		})
 
 		$(document).ready(function() {
-		    $('#vehicletable').DataTable();
+		    $('#vehicletable').DataTable();		    
 		} );
+
+		
+		$('#deleteNotification').on('click',function(ev) {
+			ev.preventDefault();
+	    	var link = this;
+	    	
+	    	$('#confirmDelete').modal({ backdrop: 'static', keyboard: false })
+        		.one('click', '#removeNot', function (e) {
+        			 window.location = link.href;	        			
+        		});		
+
+	    });
+		
 	</script>	
 </body>
 
