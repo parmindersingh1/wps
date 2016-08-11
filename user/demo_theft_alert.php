@@ -41,7 +41,7 @@ $alertCount = $stmt->fetchColumn();
           <h4 class="modal-title">Information</h4>
         </div>
         <div class="modal-body">
-          <p> You Have <?= $alertCount ?> Demo Left</p>
+          <p> You have <?= $alertCount ?> Demo Remaining</p>
         </div>
          <div class="modal-footer">
 		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="okBtn">Ok</button>
