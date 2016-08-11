@@ -20,6 +20,8 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 
 	$dol = date_format($dlost,"Y-m-d H:i:s");
 
+
+
 	$stmt = $reg_vehicle->runQuery("SELECT * FROM tbl_vehicles  WHERE vehicleID = :vehicle_id");
 	$stmt->bindparam(":vehicle_id",$vehicleID, PDO::PARAM_INT);
 	$stmt->execute();
@@ -76,8 +78,8 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		    $stmt->execute();
 			 			
 			if(isset($_POST['local'])) 	{
-				$stmt = $user->runQuery('UPDATE TABLE tbl_users_demos SET theft_alerts = theft_alerts - 1 WHERE user_id = :user_id');
-			    $stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
+				$stmt = $user->runQuery('UPDATE  tbl_users_demos SET theft_alerts = theft_alerts - 1 WHERE user_id = :user_id');
+			    $stmt->bindparam(":user_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
 			    $stmt->execute();
 			}	
 			$response["success"] = true;

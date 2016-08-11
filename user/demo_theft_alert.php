@@ -178,7 +178,6 @@ $alertCount = $stmt->fetchColumn();
 				var vehID = $("select[name='vehicleID']").val();
 				var location = $("input[name='location']").val();
 				var sendData = $(this).serialize();
-				
 				if(!isEmpty(vehID) && !isEmpty(location)) {	
 					$('#confirmDemoAlert').modal({ backdrop: 'static', keyboard: false })
 	        		.one('click', '#delete', function (e) {		

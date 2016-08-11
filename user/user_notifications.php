@@ -9,7 +9,7 @@ $user_vehicle = new Vehicle();
 include('header.php'); 
 
 	$userID = $currentUser->userID;
-	$stmt = $user_login->runQuery("SELECT n.id as id, n.message as notification FROM tbl_notifications as n JOIN `tbl_users_notifications` as un on un.notification_id = n.id  WHERE un.user_id = :user_id ORDER BY n.id DESC LIMIT 50");
+	$stmt = $user_login->runQuery("SELECT n.id as id, un.id as unID, n.message as notification FROM tbl_notifications as n JOIN `tbl_users_notifications` as un on un.notification_id = n.id  WHERE un.user_id = :user_id ORDER BY n.id DESC LIMIT 50");
 	    $stmt->bindparam(":user_id",$userID, PDO::PARAM_INT);
       $stmt->execute();
       $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@ include('header.php');
 						    	?>		
 						    			<tr>
 									        <td><a href="notification_details.php?notID=<?= $notification['id'] ?>"><?= substr($notification['notification'],0,20) ?>...</a></td>									        
-									        <td><a href="delete_notification.php?notID=<?= $notification['id']?>" data-original-title="Remove" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
+									        <td><a href="delete_notification.php?notID=<?= $notification['unID']?>" data-original-title="Remove" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
 									    </tr>
 								<?php	    
 						    		}
