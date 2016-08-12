@@ -61,15 +61,15 @@
                     <p>After Login. Go to Personal information then Press "Edit Profile Button". See below screenshots for references. </p>
                     <center><b><p>Under WCarPs App :- </p></b></center>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/edit profile1.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/edit profile1.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
-					<p>2). <img src="../WCarPs/images/faq/edit profile2.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/edit profile2.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
 					<center><b><p>Under WCarPs Website :- </p></b></center>
 					<br>
-					<center><img src="../WCarPs/images/faq/edit profile.jpg" style="width:1000px;height:500px;"></center>
+					<center><img src="../images/faq/edit profile.jpg" style="width:1000px;height:500px;"></center>
 					
 				</div>
             </div>
@@ -87,15 +87,15 @@
 					<p>Go to Vehicle Information > Click on "Remove Button" you’d like to remove From Vehicle Information. </p>
 					<center><b><p>Under WCarPs App :- </p></b></center>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/remove vehicle1.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/remove vehicle1.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
-					<p>2). <img src="../WCarPs/images/faq/remove vehicle2.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/remove vehicle2.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
 					<center><b><p>Under WCarPs Website :- </p></b></center>
 					<br>
-					<center> <img src="../WCarPs/images/faq/remove vehicle3.jpg" style="width:1000px;height:500px;"></center>
+					<center> <img src="../images/faq/remove vehicle3.jpg" style="width:1000px;height:500px;"></center>
 					
                 </div>
             </div>
@@ -113,15 +113,15 @@
                     <p>Yes it is possible. </p>
 					<p>The Owner of the stolen vehicle Will manually Enter the Stolen Vehicle & location  from where the vehicle is stolen in "Theft Alert", before Pressing the Alert Button.( This Message Will Be Notified Immediately to every user of WCarPs User Once The Alert Button Is Pressed). </p>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/theftalert1.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/theftalert1.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
-					<p>2). <img src="../WCarPs/images/faq/theftalert2.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/theftalert2.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
 					<center><b><p>Under WCarPs Website :- </p></b></center>
 					<br>
-					<center> <img src="../WCarPs/images/faq/theftalert3.jpg" style="width:1000px;height:500px;"></center>
+					<center> <img src="../images/faq/theftalert3.jpg" style="width:1000px;height:500px;"></center>
                 </div>
             </div>
         </div>
@@ -166,18 +166,18 @@
             <div id="question7" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
                      <h5><span class="label label-primary">Answer</span></h5>
-                    <p>In WCarPs/Website One Vehicle is Mandatory. </p>
+                    <p>In Website One Vehicle is Mandatory. </p>
 					<p>If  You Want To Add New Vehicle  In The App/Website Then</p>
 					<p>Go to Vehicle Information > Click on "+" Button on the right top of the App and In Website Click on " + Create Vehicle " Button on the right top then Enter the Detail of the New Vehicle.  </p>
 			        <center><b><p>Under WCarPs App :- </p></b></center>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/addvehicle1.jpg" style="width:300px;height:500px;">
-					<p>2). <img src="../WCarPs/images/faq/addvehicle2.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/addvehicle1.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/addvehicle2.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
 					<center><b><p>Under WCarPs Website :- </p></b></center>
 					<br>
-					<center> <img src="../WCarPs/images/faq/addvehicle3.jpg" style="width:1000px;height:500px;"></center>
+					<center> <img src="../images/faq/addvehicle3.jpg" style="width:1000px;height:500px;"></center>
 			 </div>
             </div>
         </div>
@@ -223,13 +223,13 @@
                     <p>Go to Menu > Notification > Tap on Remove Button of that Vehicle which you want to remove. </p>
 					<center><b><p>Under WCarPs App :- </p></b></center>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/notification1.jpg" style="width:300px;height:500px;">
-					<p>2). <img src="../WCarPs/images/faq/notification2.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/notification1.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/notification2.jpg" style="width:300px;height:500px;">
 					<br>
 					<br>
 					<center><b><p>Under WCarPs Website :- </p></b></center>
 					<br>
-					<center> <img src="../WCarPs/images/faq/notification3.jpg" style="width:1000px;height:500px;"></center>
+					<center> <img src="../images/faq/notification3.jpg" style="width:1000px;height:500px;"></center>
 			</div>
             </div>
         </div>
@@ -276,8 +276,8 @@
 					 <p>Simply Type  Vehicle/Chassis No. and You Tap On Search Button , After Tap on Search Button User Get Vehicle Owner Details</p>
 	               	<center><b><p>Under WCarPs App :- </p></b></center>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/search1.jpg" style="width:300px;height:500px;">
-					<p>2). <img src="../WCarPs/images/faq/search2.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/search1.jpg" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/search2.jpg" style="width:300px;height:500px;">
 							
 			</div>
             </div>
@@ -398,26 +398,26 @@ Tab You Will Get The Full Detail Of The Vehicle and at The End of the vehicle de
                 <div class="panel-body">
                      <h5><span class="label label-primary">Answer</span></h5>
 					 <br>
-					<p>1). <img src="../WCarPs/images/faq/Mi1.jpg" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/Mi1.jpg" style="width:300px;height:500px;">
 					 <p>Autostart probably the best MIUI feature that doesn’t come enabled by default, but should.</p>
 					 <p>What does autostart do? It basically starts the apps you select when the phone starts, so you never miss any notifications or updates.</p>
 					 <p>To enable autostart for your apps, follow the steps below:</p>
 					 <p>1. Tap on the Security app from the app screen. </p>
 					 <p>You will not find this if you enter from the Settings menu, you have to tap directly on the app icon.</p>
 					<br>
-					<p>1). <img src="../WCarPs/images/faq/Mi2.png" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/Mi2.png" style="width:300px;height:500px;">
 					<br>
 					<p>2. Once in the Security app, tap on Permissions.</p>
 					<br>
-					<p>2). <img src="../WCarPs/images/faq/Mi3.png" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/Mi3.png" style="width:300px;height:500px;">
 					<br>
 					<p>3. Tap on Autostart</p>
 					<br>
-					<p>3). <img src="../WCarPs/images/faq/Mi4.png" style="width:300px;height:500px;">
+					<p>3). <img src="../images/faq/Mi4.png" style="width:300px;height:500px;">
 					<br>
 					<p>4. Toggle the WCarPs app to enable Autostart </p>
 					<br>
-					<p>4). <img src="../WCarPs/images/faq/Mi5.png" style="width:300px;height:500px;">
+					<p>4). <img src="../images/faq/Mi5.png" style="width:300px;height:500px;">
 					<p>5. Reboot your phone.</p>
 					<p>Done!! Now Your WCarPs App Notifications Works</p>
 					
@@ -437,10 +437,10 @@ Tab You Will Get The Full Detail Of The Vehicle and at The End of the vehicle de
 					 <p>Under This Every User Get Free Demo Theft Alert to Learn Original Theft Alert Working</p>
 					 <p>1. In Starting User Get Popup Of Free Demos i.e :- </p>
 					 <br>
-					<p>1). <img src="../WCarPs/images/faq/Demo alert popup1.png" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/Demo alert popup1.png" style="width:300px;height:500px;">
 					 <p>2. After Popup User Reaches to Demo Screen Where She/he Select Vehicle or Location then Tap on Demo Alert Button to test Demo Theft Alert i.e :- </p>
 					 <br>
-					<p>2). <img src="../WCarPs/images/faq/Demo alert1.png" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/Demo alert1.png" style="width:300px;height:500px;">
 			</div>
             </div>
         </div>
@@ -457,10 +457,10 @@ Tab You Will Get The Full Detail Of The Vehicle and at The End of the vehicle de
 					 <p>Under This Every User Get Free Demo My Alerts to Learn Original My Alerts Working</p>
 					 <p>1. In Starting User Get Popup Of Free Demos i.e :- </p>
 					 <br>
-					<p>1). <img src="../WCarPs/images/faq/Demo my alert popup1.png" style="width:300px;height:500px;">
+					<p>1). <img src="../images/faq/Demo my alert popup1.png" style="width:300px;height:500px;">
 					 <p>2. After Popup User Reaches to Demo Screen Where She/he Tap on Demo Recovery Button to test Demo My Alerts i.e :- </p>
 					 <br>
-					<p>2). <img src="../WCarPs/images/faq/Demo my alert 1.png" style="width:300px;height:500px;">
+					<p>2). <img src="../images/faq/Demo my alert 1.png" style="width:300px;height:500px;">
 			</div>
             </div>
         </div>
