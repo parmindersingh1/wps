@@ -78,7 +78,7 @@ if(isset($_POST['vehicleID']) && isset($_POST['location']) && isset($_POST['dol'
 		    $stmt->execute();
 			 			
 			if(isset($_POST['local'])) 	{
-				$stmt = $user->runQuery('UPDATE  tbl_users_demos SET theft_alerts = theft_alerts - 1 WHERE user_id = :user_id');
+				$stmt = $user->runQuery('UPDATE  tbl_users_demos SET theft_alerts = IF(theft_alerts >0,theft_alerts - 1,0) WHERE user_id = :user_id');
 			    $stmt->bindparam(":user_id",$vehicleDetails['user_id'], PDO::PARAM_INT);
 			    $stmt->execute();
 			}	
