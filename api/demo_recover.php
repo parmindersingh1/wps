@@ -51,7 +51,7 @@ if(isset($_POST['alertId']) && isset($_POST['userId'])) {
 	    $stmt->execute();
 
 	    if(isset($_POST['local'])) 	{
-			$stmt = $user->runQuery('UPDATE tbl_users_demos SET found_alerts = found_alerts - 1 WHERE user_id = :user_id');
+			$stmt = $user->runQuery('UPDATE tbl_users_demos SET found_alerts = IF(found_alerts >0, found_alerts - 1,0) WHERE user_id = :user_id');
 		    $stmt->bindparam(":user_id",$userId, PDO::PARAM_INT);
 		    $stmt->execute();
 		}	
