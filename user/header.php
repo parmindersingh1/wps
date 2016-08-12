@@ -103,27 +103,9 @@ if($user_login->is_logged_in() !="")
 	</ul>
 	</div><!--/.sidebar-->
 
-<!-- Modal -->
-  <div class="modal fade" id="confirmRecovery" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Confirmation</h4>
-        </div>
-        <div class="modal-body">
-          <p> Are you sure to Send Notification?</p>
-        </div>
-         <div class="modal-footer">
-		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Ok</button>
-		    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-		  </div>
-      </div>
-      
-    </div>
-  </div>
+
+	
+
 
    <div class="modal fade" id="confirmDemoAlert" role="dialog">
     <div class="modal-dialog">
@@ -132,10 +114,10 @@ if($user_login->is_logged_in() !="")
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Confirmation</h4>
+          <h4 class="modal-title">Warning (This is Demo)</h4>
         </div>
         <div class="modal-body">
-          <p> Are you sure to Send Demo Notification?</p>
+          <p> Do you Want to Notify All Users?</p>
         </div>
          <div class="modal-footer">
 		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Ok</button>

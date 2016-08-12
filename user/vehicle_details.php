@@ -24,6 +24,29 @@ if(isset($_GET['id']) && isset($_GET['lvID'])){
 }
 
  ?>
+
+ <!-- Modal -->
+  <div class="modal fade" id="confirmRecovery" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Warning (This is not Demo)</h4>
+        </div>
+        <div class="modal-body">
+          <p> Do you Want to Notify All Users?</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Ok</button>
+		    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div>
+
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
