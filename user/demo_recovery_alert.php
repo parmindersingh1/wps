@@ -230,10 +230,11 @@ $foundCount = $stmt->fetchColumn();
 					$.post('../api/demo_recover.php',data,function (data) {
 						$('.preloader').fadeOut();	
 						if(data.success) {
-							$(".alert-success").empty()
-									  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Success </strong>'+data.message)
-									  .show();
-									  location.reload();
+							// $(".alert-success").empty()
+							// 		  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Success </strong>'+data.message)
+							// 		  .show();
+							// 		  location.reload();
+							history.go(-1);
 							
 						} else {
 							$(".alert-danger").empty()

@@ -188,11 +188,12 @@ $alertCount = $stmt->fetchColumn();
 							$('.preloader').fadeOut();				
 							
 							if(data.success) {
-								$(".alert-success").empty()
-										  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Success </strong>'+data.message)
-										  .show();
+								// $(".alert-success").empty()
+								// 		  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Success </strong>'+data.message)
+								// 		  .show();
 
-
+								history.go(-1);
+								
 							} else {
 								$(".alert-danger").empty()
 										  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Warning </strong>'+data.message)
