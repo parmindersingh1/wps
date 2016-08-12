@@ -167,7 +167,7 @@ $alertCount = $stmt->fetchColumn();
 			 $('#demoAlertCount').modal({ backdrop: 'static', keyboard: false })
 			 	.one('click', '#okBtn', function (e) {	
 			 		if(parseInt($("#alertCount").val()) <= 0) {
-			 			history.go(-1);
+			 			window.location.href = 'index.php';
 			 		} 
 
 			 	});
@@ -192,7 +192,7 @@ $alertCount = $stmt->fetchColumn();
 								// 		  .html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <strong>Success </strong>'+data.message)
 								// 		  .show();
 
-								history.go(-1);
+								window.location.href = 'index.php';
 								
 							} else {
 								$(".alert-danger").empty()
