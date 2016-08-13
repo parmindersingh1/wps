@@ -386,11 +386,11 @@ jQuery(document).ready(function($) {
 				    createMarker: function() { return null; }
 				}).addTo(gpsTrackerMap);
 
-                setTimeout(function() {
-                   gpsTrackerMap.removeControl(routingControl);
-                }, 2000);
+                // setTimeout(function() {
+                //    gpsTrackerMap.removeControl(routingControl);
+                // }, 2000);
                
-                
+                routingControl.hide();
                 // fit markers within window
                 var bounds = new L.LatLngBounds(locationArray);
                 gpsTrackerMap.fitBounds(bounds);
