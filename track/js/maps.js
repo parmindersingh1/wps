@@ -386,7 +386,10 @@ jQuery(document).ready(function($) {
 				    createMarker: function() { return null; }
 				}).addTo(gpsTrackerMap);
 
-                gpsTrackerMap.removeControl(routingControl);
+                setTimeout(function() {
+                   gpsTrackerMap.removeControl(routingControl);
+                }, 2000);
+               
                 
                 // fit markers within window
                 var bounds = new L.LatLngBounds(locationArray);
