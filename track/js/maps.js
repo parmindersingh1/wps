@@ -374,7 +374,7 @@ jQuery(document).ready(function($) {
 				// // zoom the map to the polyline
 				// gpsTrackerMap.fitBounds(polyline.getBounds());
 
-				L.Routing.control({
+				var routingControl = L.Routing.control({
 				    waypoints: locationArray,
 				    routeWhileDragging: false,
 				    draggableWaypoints: false,
@@ -385,6 +385,8 @@ jQuery(document).ready(function($) {
                        },
 				    createMarker: function() { return null; }
 				}).addTo(gpsTrackerMap);
+
+                gpsTrackerMap.removeControl(routingControl);
                 
                 // fit markers within window
                 var bounds = new L.LatLngBounds(locationArray);
