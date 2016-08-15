@@ -297,6 +297,39 @@ class USER
 		}
 	}
 
+
+	public function reactivate($userID) {
+		try
+		{					
+			$stmt = $this->conn->prepare("INSERT INTO tbl_users SELECT * FROM tbl_archived_users WHERE userID=:userID");	
+			$stmt->bindparam(":userID",$userID, PDO::PARAM_INT);			
+
+			$stmt->execute();
+
+			$stmt = $this->conn->prepare("INSERT INTO tbl_vehicles SELECT * FROM tbl_archived_vehicles WHERE user_id=:userID");	
+			$stmt->bindparam(":userID",$userID, PDO::PARAM_INT);			
+
+			$stmt->execute();
+
+			$stmt = $this->conn->prepare("DELETE FROM tbl_archived_vehicles WHERE user_id=:userID");	
+			$stmt->bindparam(":userID",$userID, PDO::PARAM_INT);			
+
+			$stmt->execute();
+
+			$stmt = $this->conn->prepare("DELETE FROM tbl_archived_users WHERE userID=:userID");	
+			$stmt->bindparam(":userID",$userID, PDO::PARAM_INT);			
+
+			$stmt->execute();
+
+
+			return $stmt->rowCount() ? true : false;	 
+		}
+		catch(PDOException $ex)
+		{
+			return false;
+		}
+	}
+
 	public function destroy($userID) {
 		try
 		{				
