@@ -38,7 +38,9 @@ include('header.php');
 						        <th>Date Of Birth</th>
 						        <th>Gender</th>
 						        <th>Phone</th>
-						        <th>Adhar Card No</th>	
+						        <th>Adhar Card No</th>
+						        <th>Status</th>	
+						        <th>Action</th>		
 						    </tr>
 						    </thead>
 						    <tbody>
@@ -57,12 +59,12 @@ include('header.php');
 						    			<tr>
 									        <td><a href="user.php?id=<?= $user['userID'] ?>"><?= $user['userEmail'] ?></a></td>
 									        <td><?= $user['first_name'].' '.$user['last_name'] ?></td>
-									        <td><?= $user['userEmail'] ?></td>
 									        <td><?= $user['date_of_birth'] ?></td>
 									        <td><?= $user['phone'] ?></td>							        
 									        <td><?= $user['adhar_card_no'] ?></td>	
 									        <td><?= $user['tokenCode'] ?></td>
 									        <td><?= $userStatus ?></td>
+									        <td><a href="reactivate_user.php?userID=<?= $user['userID']?>" data-original-title="Reactivate User" data-toggle="tooltip" type="button" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-edit"></i> Reactivate User</a></td>
 									    </tr>
 								<?php	    
 						    		}
