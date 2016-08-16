@@ -129,16 +129,16 @@ include('header.php');
 
 		$(document).ready(function() {		    
 
-		    $('#reactivateLink').on('click',function(event)){
+		    $('#reactivateLink').on('click',function(event){
 		    	event.preventDefault();
 		    	var link = this;
 		    	
 		    	$('#reactivateModal').modal({ backdrop: 'static', keyboard: false })
 	        		.one('click', '#okBtn', function (e) {		
 	        			window.location = link.href;
-	        		}
+	        		});
 
-		    }
+		    });
 		    $('#usertable').DataTable();
 		} );
 	</script>	
