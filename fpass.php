@@ -44,8 +44,7 @@ if(isset($_POST['btn-forgot']))
 		$msg = "<div class='alert alert-success'>
 			<button class='close' data-dismiss='alert'>&times;</button>
 			We've sent an email to $email.
-			Please click on the password reset link in the email to generate new password. 
-			<a href='".$user_login->url()."resetpass.php?id=$id&code=$code'>
+			Please click on the password reset link in the email to generate new password. 			
 		</div>";
 	}
 	else

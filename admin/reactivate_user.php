@@ -6,7 +6,7 @@ require_once dirname(__FILE__).'/../api/class.vehicle.php';
 $user_login = new USER();
 $user_vehicle = new Vehicle();
 
-include('header.php'); 
+//include('header.php'); 
 
 if(isset($_GET['userID'])) {
 	$userID = $_GET['userID'];

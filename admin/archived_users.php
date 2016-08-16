@@ -14,6 +14,27 @@ include('header.php');
 
 
  ?>
+
+ <div class="modal fade" id="reactivateModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Warning</h4>
+        </div>
+        <div class="modal-body">
+          <p> Are You Sure?</p>
+        </div>
+         <div class="modal-footer">
+		    <button type="button" data-dismiss="modal" class="btn btn-primary" id="okBtn">Ok</button>
+		    <button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -64,7 +85,7 @@ include('header.php');
 									        <td><?= $user['adhar_card_no'] ?></td>	
 									        <td><?= $user['tokenCode'] ?></td>
 									        <td><?= $userStatus ?></td>
-									        <td><a href="reactivate_user.php?userID=<?= $user['userID']?>" data-original-title="Reactivate User" data-toggle="tooltip" type="button" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-edit"></i> Reactivate User</a></td>
+									        <td><a id="reactivateLink" href="reactivate_user.php?userID=<?= $user['userID']?>" data-original-title="Reactivate User" data-toggle="tooltip" type="button" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-edit"></i> Reactivate User</a></td>
 									    </tr>
 								<?php	    
 						    		}
@@ -106,7 +127,18 @@ include('header.php');
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
 
-		$(document).ready(function() {
+		$(document).ready(function() {		    
+
+		    $('#reactivateLink').on('click',function(event)){
+		    	event.preventDefault();
+		    	var link = this;
+		    	
+		    	$('#reactivateModal').modal({ backdrop: 'static', keyboard: false })
+	        		.one('click', '#okBtn', function (e) {		
+	        			window.location = link.href;
+	        		}
+
+		    }
 		    $('#usertable').DataTable();
 		} );
 	</script>	
