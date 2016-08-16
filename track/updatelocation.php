@@ -4,7 +4,7 @@
     
     $user_login = new USER();
     $user_vehicle = new Vehicle();
-// file_put_contents( 'debug' . time() . '.log', var_export( $_REQUEST, true));
+ file_put_contents( 'debug' . time() . '.log', var_export( $_REQUEST, true));
 
     $latitude       = isset($_GET['latitude']) ? $_GET['latitude'] : '0';
     $latitude       = (float)str_replace(",", ".", $latitude); // to handle European locale decimals

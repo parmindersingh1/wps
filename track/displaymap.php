@@ -49,7 +49,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4" id="toplogo">
-                <img id="halimage" src="../img/logo-active.png">WCarsPs Live Tracking
+                <img id="halimage" src="../images/logo_nav.png">WCarsPs Live Tracking
             </div>
             <div class="col-sm-8" id="messages"></div>
         </div>
