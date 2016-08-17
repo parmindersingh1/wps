@@ -271,7 +271,7 @@ design make it actual for a long time.</p>
 				<ul class="pricing-table">
 					<li class="wow flipInY">
 						<h3>Standard</h3>
-						<span> Rs.10/- <small> Downloading</small> </span>
+						<span> Free <small> Downloading</small> </span>
 						<ul class="benefits-list">
 						     <li>WCarPs App</li>
 							 <li>WCarPs Website Login</li>
